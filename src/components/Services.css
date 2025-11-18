@@ -1,0 +1,126 @@
+.services {
+    padding: 140px 0;
+    background: var(--dark-bg);
+    position: relative;
+}
+
+.services-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0.05;
+}
+
+.wireframe-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, transparent 49.5%, var(--primary-color) 49.5%, var(--primary-color) 50.5%, transparent 50.5%),
+        linear-gradient(0deg, transparent 49.5%, var(--primary-color) 49.5%, var(--primary-color) 50.5%, transparent 50.5%);
+    background-size: 50px 50px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.section-title {
+    font-size: 56px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.section-description {
+    color: var(--text-secondary);
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+}
+
+.service-card {
+    background: var(--card-bg);
+    padding: 60px 48px;
+    border-radius: 15px;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.service-icon {
+    width: 84px;
+    height: 84px;
+    background: rgba(202, 255, 51, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.service-card h3 {
+    font-size: 28px;
+    margin-bottom: 22px;
+    font-weight: 500;
+}
+
+.service-card p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin-bottom: 34px;
+    line-height: 1.7;
+}
+
+.learn-more-btn {
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 14px 34px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.learn-more-btn:hover {
+    background: var(--primary-color);
+    color: #000000;
+}
+
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 44px 34px;
+    }
+
+    .section-title {
+        font-size: 40px;
+    }
+}

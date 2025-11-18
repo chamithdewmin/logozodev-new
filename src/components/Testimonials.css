@@ -1,0 +1,110 @@
+.testimonials {
+    padding: 140px 0;
+    background: var(--dark-bg);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+}
+
+.testimonial-card {
+    background: var(--card-bg);
+    padding: 48px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.testimonial-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 22px;
+    line-height: 1.5;
+}
+
+.testimonial-text {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 34px;
+    flex-grow: 1;
+}
+
+.testimonial-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.testimonial-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+}
+
+.author-info h4 {
+    font-size: 18px;
+    margin-bottom: 3px;
+    font-weight: 500;
+}
+
+.author-info p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.open-website-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-primary);
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.open-website-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+@media (max-width: 1024px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonial-card {
+        padding: 36px;
+    }
+
+    .testimonial-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .open-website-btn {
+        width: 100%;
+    }
+}
