@@ -7,9 +7,9 @@ const ContactPage = () => {
     <>
       <section className="page-hero">
         <div className="container">
-          <h1 className="page-hero-title">Contact Us</h1>
+          <h1 className="page-hero-title">Let's Start Your Project</h1>
           <p className="page-hero-description">
-            Tell us about your project and goals. Our team will respond promptly with next steps.
+            Complete this quick form to tell us about your needs. We'll respond within 24 hours with a tailored proposal.
           </p>
         </div>
       </section>

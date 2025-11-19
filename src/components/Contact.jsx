@@ -112,17 +112,7 @@ const Contact = () => {
   return (
     <section id="contact" className="contact">
       <div className="container">
-        <div className="contact-header">
-          <div className="logo-icon">
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-              <rect x="20" y="20" width="40" height="40" rx="8" fill="#CAFF33"/>
-              <path d="M35 35L45 40V50L35 55L25 50V40L35 35Z" fill="#1A1A1A"/>
-            </svg>
-          </div>
-          <h2 className="section-title">Let's Start Your Project</h2>
-          <p className="section-description">
-            Complete this quick form to tell us about your needs. We'll respond within 24 hours with a tailored proposal.
-          </p>
+        <div className="">
         </div>
 
         <div className="stepper-form-wrapper">
