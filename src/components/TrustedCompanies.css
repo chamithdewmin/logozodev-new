@@ -26,41 +26,92 @@ border:1px solid rgba(255,255,255,0.1);
 background:rgba(255,255,255,0.04); 
 font-size:15px; 
 z-index: 10; 
+white-space: nowrap;
 }
 
-.companies-grid { 
-display:grid; 
-grid-template-columns:repeat(6,1fr); 
-gap:48px; 
-align-items:center; 
-justify-items:center; 
-
+/* LogoLoop Container */
+.logo-loop-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+  margin-top: 20px;
 }
+
+/* Gradient fade-outs on edges */
+.logo-loop-container::before,
+.logo-loop-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.logo-loop-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-darker), transparent);
+}
+
+.logo-loop-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-darker), transparent);
+}
+
+/* Infinite scroll animation */
+.logo-loop {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  animation: logoScroll 10s linear infinite;
+  will-change: transform;
+}
+
+@keyframes logoScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 .company-logo { 
-width:140px; 
-height:56px; 
-display:flex; 
-align-items:center; 
-justify-content:center; 
-opacity:0.75; 
-transition:var(--transition); 
+  flex-shrink: 0;
+  width: 140px; 
+  height: 64px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  opacity: 0.7;
 }
 
-.company-logo:hover { opacity:1; transform:scale(1.07); }
-.company-logo img { max-width:100%; max-height:100%; filter:brightness(0) invert(1); }
+.company-logo img { 
+  max-width: 100%; 
+  max-height: 100%; 
+  filter: brightness(0) invert(1); 
+  object-fit: contain;
+}
 @media (max-width: 1024px) {
     .trusted-companies {
         padding: 60px 0 70px;
     }
 
-    .companies-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
+    .logo-loop {
+        gap: 60px;
+        animation: logoScroll 10s linear infinite;
+    }
+
+    .logo-loop-container::before,
+    .logo-loop-container::after {
+        width: 150px;
     }
 
     .company-logo {
         width: 120px;
-        height: 48px;
+        height: 56px;
     }
 }
 
@@ -69,14 +120,19 @@ transition:var(--transition);
         padding: 50px 0 60px;
     }
 
-    .companies-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
+    .logo-loop {
+        gap: 50px;
+        animation: logoScroll 10s linear infinite;
+    }
+
+    .logo-loop-container::before,
+    .logo-loop-container::after {
+        width: 100px;
     }
 
     .company-logo {
-        width: 110px;
-        height: 44px;
+        width: 100px;
+        height: 48px;
     }
 
     .trust-pill {
@@ -90,14 +146,19 @@ transition:var(--transition);
         padding: 40px 0 50px;
     }
 
-    .companies-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+    .logo-loop {
+        gap: 40px;
+        animation: logoScroll 10s linear infinite;
+    }
+
+    .logo-loop-container::before,
+    .logo-loop-container::after {
+        width: 60px;
     }
 
     .company-logo {
-        width: 100px;
-        height: 40px;
+        width: 90px;
+        height: 44px;
     }
 
     .trust-pill {
