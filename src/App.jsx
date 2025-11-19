@@ -8,6 +8,7 @@ import WorkPage from './pages/WorkPage';
 import ProcessPage from './pages/ProcessPage';
 import AboutPage from './pages/AboutPage';
 import CareersPage from './pages/CareersPage';
+import JobDetailsPage from './pages/JobDetailsPage';
 import ContactPage from './pages/ContactPage';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path="/process" element={<ProcessPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/careers" element={<CareersPage />} />
+        <Route path="/careers/job-details" element={<JobDetailsPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <Footer />

@@ -1,44 +1,122 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './PageHero.css';
 import './CareersPage.css';
 import CTA from '../components/CTA';
 
 const CareersPage = () => {
+  const navigate = useNavigate();
+
   const openPositions = [
     {
+      id: 1,
       title: 'Senior UI/UX Designer',
       department: 'Design',
       location: 'Remote',
       type: 'Full-time',
-      description: 'We are seeking a talented UI/UX designer to create exceptional user experiences for our clients.'
+      description: 'We are looking for a talented Senior UI/UX Designer to join our team and help shape the digital experiences of our clients. In this role, you will lead the design process from concept to final execution, ensuring intuitive, engaging, and visually appealing interfaces. You will work closely with developers, project managers, and stakeholders to create designs that are both functional and aesthetically excellent.',
+      responsibilities: [
+        'Design user interfaces for web and mobile applications',
+        'Conduct user research and usability testing',
+        'Create wireframes, prototypes, and high-fidelity designs',
+        'Collaborate with developers and stakeholders',
+        'Maintain design systems and component libraries'
+      ],
+      requirements: [
+        '5+ years of UI/UX design experience',
+        'Proficiency in Figma, Sketch, or Adobe XD',
+        'Strong portfolio demonstrating design thinking',
+        'Experience with responsive and mobile-first design',
+        'Excellent communication skills'
+      ]
     },
     {
+      id: 2,
       title: 'Full Stack Developer',
       department: 'Engineering',
       location: 'New York, NY',
       type: 'Full-time',
-      description: 'Join our engineering team to build scalable web applications using modern technologies.'
+      description: 'Join our engineering team to build scalable web applications using modern technologies.',
+      responsibilities: [
+        'Develop and maintain full-stack web applications',
+        'Write clean, maintainable, and efficient code',
+        'Collaborate with cross-functional teams',
+        'Participate in code reviews and architectural decisions',
+        'Optimize applications for performance and scalability'
+      ],
+      requirements: [
+        '4+ years of full-stack development experience',
+        'Proficiency in React, Node.js, and databases',
+        'Experience with RESTful APIs and microservices',
+        'Knowledge of cloud platforms (AWS, Azure, or GCP)',
+        'Strong problem-solving skills'
+      ]
     },
     {
+      id: 3,
       title: 'Project Manager',
       department: 'Operations',
       location: 'San Francisco, CA',
       type: 'Full-time',
-      description: 'Lead digital projects from conception to delivery, ensuring client satisfaction and team success.'
+      description: 'Lead digital projects from conception to delivery, ensuring client satisfaction and team success.',
+      responsibilities: [
+        'Manage multiple client projects simultaneously',
+        'Define project scope, goals, and deliverables',
+        'Coordinate internal resources and third parties',
+        'Monitor project progress and make adjustments',
+        'Ensure projects are delivered on time and within budget'
+      ],
+      requirements: [
+        '3+ years of project management experience',
+        'PMP or Agile certification preferred',
+        'Experience with project management tools',
+        'Excellent organizational and leadership skills',
+        'Strong client relationship management'
+      ]
     },
     {
+      id: 4,
       title: 'Mobile App Developer',
       department: 'Engineering',
       location: 'Remote',
       type: 'Full-time',
-      description: 'Develop innovative mobile applications for iOS and Android platforms.'
+      description: 'Develop innovative mobile applications for iOS and Android platforms.',
+      responsibilities: [
+        'Build native or cross-platform mobile applications',
+        'Implement responsive and performant UI/UX',
+        'Integrate with backend services and APIs',
+        'Write unit and integration tests',
+        'Stay updated with mobile development trends'
+      ],
+      requirements: [
+        '3+ years of mobile development experience',
+        'Proficiency in React Native, Flutter, or native development',
+        'Experience with mobile app deployment',
+        'Knowledge of mobile design patterns',
+        'Strong debugging and optimization skills'
+      ]
     },
     {
+      id: 5,
       title: 'Digital Marketing Specialist',
       department: 'Marketing',
       location: 'Los Angeles, CA',
       type: 'Full-time',
-      description: 'Drive digital marketing strategies and campaigns for our agency and clients.'
+      description: 'Drive digital marketing strategies and campaigns for our agency and clients.',
+      responsibilities: [
+        'Develop and execute digital marketing campaigns',
+        'Manage social media and content marketing',
+        'Analyze campaign performance and ROI',
+        'Optimize SEO and SEM strategies',
+        'Create marketing reports and presentations'
+      ],
+      requirements: [
+        '2+ years of digital marketing experience',
+        'Experience with Google Analytics and marketing tools',
+        'Strong understanding of SEO/SEM',
+        'Excellent copywriting and communication skills',
+        'Data-driven mindset'
+      ]
     }
   ];
 
@@ -75,6 +153,10 @@ const CareersPage = () => {
     }
   ];
 
+  const handleViewRole = (job) => {
+    navigate('/careers/job-details', { state: { job } });
+  };
+
   return (
     <>
       <section className="page-hero">
@@ -88,7 +170,7 @@ const CareersPage = () => {
 
       <section className="benefits-section">
         <div className="container">
-          <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '60px' }}>Why Work With Us</h2>
+          <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '60px' }}>Ready to Be Part of Digital Innovation?</h2>
           <div className="benefits-grid">
             {benefits.map((benefit, index) => (
               <div key={index} className="benefit-card">
@@ -116,13 +198,17 @@ const CareersPage = () => {
                     <h3>{job.title}</h3>
                     <div className="job-meta">
                       <span className="job-department">{job.department}</span>
-                      <span className="job-location">📍 {job.location}</span>
+                      <span className="job-location">{job.location}</span>
                       <span className="job-type">{job.type}</span>
                     </div>
                   </div>
-                  <button className="apply-btn">Apply Now</button>
+                  <button 
+                    className="apply-btn"
+                    onClick={() => handleViewRole(job)}
+                  >
+                    View role
+                  </button>
                 </div>
-                <p className="job-description">{job.description}</p>
               </div>
             ))}
           </div>

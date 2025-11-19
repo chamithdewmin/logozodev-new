@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './PageHero.css';
+import './TeamSlider.css';
 import About from '../components/About';
 import Testimonials from '../components/Testimonials';
 import CTA from '../components/CTA';
 
 const AboutPage = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const membersPerView = 5;
+
   const team = [
     {
       name: 'Chamith Samarakoon',
@@ -18,15 +22,38 @@ const AboutPage = () => {
     },
     {
       name: '-',
-      role: 'Senior Developer',
+      role: 'Lead Software Engineer',
       image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPKQ52P6bM6vxzOWrqBrsNpSpLxAi0zpzT4A&s'
     },
     {
       name: 'Shahen Dulash',
       role: 'Digital Marketing Specialist',
       image: 'https://media.licdn.com/dms/image/v2/D5603AQH3Qbj-AUGkxA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1732173366122?e=1765411200&v=beta&t=DbVWXlp7XBBTFk96IF_ObgLgRhmlZiq443v9AAr5DBw'
+    },
+      {
+      name: 'Shahen Dulash',
+      role: 'Digital Marketing Specialist',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQH3Qbj-AUGkxA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1732173366122?e=1765411200&v=beta&t=DbVWXlp7XBBTFk96IF_ObgLgRhmlZiq443v9AAr5DBw'
+    },
+          {
+      name: 'Shahen Dulash',
+      role: 'Digital Marketing Specialist',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQH3Qbj-AUGkxA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1732173366122?e=1765411200&v=beta&t=DbVWXlp7XBBTFk96IF_ObgLgRhmlZiq443v9AAr5DBw'
     }
+
   ];
+
+  const nextSlide = () => {
+    if (currentIndex < team.length - membersPerView) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const prevSlide = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
 
   return (
     <>
@@ -39,50 +66,60 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="about-story" style={{ padding: '100px 0', background: 'var(--darker-bg)' }}>
-        <div className="container">
-          <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-            <h2 className="section-title" style={{ marginBottom: '30px' }}>Our Story</h2>
-            <p className="section-description" style={{ marginBottom: '20px' }}>
-              Founded in 2020, SquareUp began with a simple mission: to help businesses thrive in the digital age. 
-              What started as a small team of passionate creators has grown into a full-service digital agency trusted by over 250 companies worldwide.
-            </p>
-            <p className="section-description">
-              We believe in the power of great design and solid engineering to transform businesses. Every project we undertake 
-              is an opportunity to push boundaries, challenge conventions, and deliver results that exceed expectations.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <About />
 
-      <section className="team-section" style={{ padding: '100px 0', background: 'var(--dark-bg)' }}>
+      <section className="team-section">
         <div className="container">
-          <div className="section-header" style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <h2 className="section-title">Our Team</h2>
-            <p className="section-description">
-              Meet the talented individuals who bring your digital dreams to life.
-            </p>
+          <div className="team-header-wrapper">
+            <div className="team-text-content">
+              <div className="team-badge">Team LogozoDev</div>
+              <h2 className="section-title">The Team Behind the Innovation</h2>
+              <p className="team-description">
+                At LogozoDev, we're a hands-on team of engineers, designers, and researchers building production-ready solutions. 
+                We blend product thinking with applied expertise to deliver secure, scalable solutions that create real business impact for our customers.
+              </p>
+            </div>
+            
+            <div className="team-navigation">
+              <button 
+                className="team-nav-arrow" 
+                onClick={prevSlide}
+                disabled={currentIndex === 0}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M15 18l-6-6 6-6"/>
+                </svg>
+              </button>
+              <button 
+                className="team-nav-arrow" 
+                onClick={nextSlide}
+                disabled={currentIndex >= team.length - membersPerView}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M9 18l6-6-6-6"/>
+                </svg>
+              </button>
+            </div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '40px' }}>
-            {team.map((member, index) => (
-              <div key={index} style={{ textAlign: 'center' }}>
-                <img 
-                  src={member.image} 
-                  alt={member.name}
-                  style={{ 
-                    width: '180px', 
-                    height: '180px', 
-                    borderRadius: '50%', 
-                    marginBottom: '20px',
-                    border: '3px solid var(--primary-color)'
-                  }}
-                />
-                <h3 style={{ fontSize: '22px', marginBottom: '8px', color: 'var(--text-primary)' }}>{member.name}</h3>
-                <p style={{ color: 'var(--primary-color)', fontSize: '16px' }}>{member.role}</p>
-              </div>
-            ))}
+
+          <div className="team-slider-wrapper">
+            <div 
+              className="team-slider-track" 
+              style={{ 
+                transform: `translateX(-${currentIndex * (100 / membersPerView)}%)`,
+                width: `${(team.length / membersPerView) * 100}%`
+              }}
+            >
+              {team.map((member, index) => (
+                <div key={index} className="team-member">
+                  <div className="team-image-wrapper">
+                    <img src={member.image} alt={member.name} className="team-image" />
+                  </div>
+                  <h3 className="team-name">{member.name}</h3>
+                  <p className="team-role">{member.role}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

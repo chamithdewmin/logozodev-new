@@ -1,0 +1,252 @@
+.team-section {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #1A1A1A 0%, #0A0A0F 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.team-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="teamgrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(202,255,51,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23teamgrid)"/></svg>');
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.team-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.team-text-content {
+  flex: 1;
+  max-width: 800px;
+}
+
+.team-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.team-text-content .section-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.team-description {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.team-navigation {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+  margin-top: 40px;
+}
+
+.team-nav-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(202, 255, 51, 0.3);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.team-nav-arrow:hover:not(:disabled) {
+  background: var(--primary-color);
+  color: #0A0A0F;
+  border-color: var(--primary-color);
+  transform: scale(1.1);
+  box-shadow: 0 8px 24px rgba(202, 255, 51, 0.4);
+}
+
+.team-nav-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.team-slider-wrapper {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.team-slider-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-member {
+  flex: 0 0 20%;
+  text-align: center;
+  padding: 0 15px;
+}
+
+.team-image-wrapper {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 24px;
+  position: relative;
+}
+
+.team-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 3px solid rgba(202, 255, 51, 0.3);
+}
+
+.team-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.team-role {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .team-header-wrapper {
+    flex-direction: column;
+  }
+
+  .team-navigation {
+    margin-top: 30px;
+  }
+
+  .team-member {
+    flex: 0 0 33.333%;
+  }
+
+  .team-nav-arrow {
+    width: 44px;
+    height: 44px;
+  }
+
+  .team-image-wrapper {
+    width: 160px;
+    height: 160px;
+  }
+
+  .team-text-content .section-title {
+    font-size: 2rem;
+  }
+
+  .team-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-section {
+    padding: 80px 0;
+  }
+
+  .team-header-wrapper {
+    margin-bottom: 50px;
+  }
+
+  .team-text-content .section-title {
+    font-size: 1.75rem;
+  }
+
+  .team-description {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .team-member {
+    flex: 0 0 50%;
+  }
+
+  .team-nav-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .team-nav-arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .team-image-wrapper {
+    width: 140px;
+    height: 140px;
+  }
+
+  .team-name {
+    font-size: 1rem;
+  }
+
+  .team-role {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-member {
+    flex: 0 0 100%;
+  }
+
+  .team-nav-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .team-image-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+
+  .team-name {
+    font-size: 0.95rem;
+  }
+
+  .team-role {
+    font-size: 0.8rem;
+  }
+
+  .team-text-content .section-title {
+    font-size: 1.5rem;
+  }
+
+  .team-badge {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+}

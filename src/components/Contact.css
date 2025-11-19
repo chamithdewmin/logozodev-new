@@ -243,6 +243,12 @@
   padding-right: 50px;
 }
 
+.form-group select option {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 12px;
+}
+
 /* Budget Slider */
 .budget-display {
   display: flex;
