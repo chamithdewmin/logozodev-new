@@ -61,21 +61,29 @@ const Contact = () => {
     <section id="contact" className="contact">
       <div className="container">
         <div className="contact-header">
-          <div className="logo-large">
-            <svg width="60" height="60" viewBox="0 0 40 40" fill="none">
-              <path d="M20 5L35 12.5V27.5L20 35L5 27.5V12.5L20 5Z" stroke="#CAFF33" strokeWidth="2" fill="none"/>
-              <path d="M20 15L28 19V29L20 33L12 29V19L20 15Z" fill="#CAFF33"/>
+          <div className="logo-icon">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <rect x="20" y="20" width="40" height="40" rx="8" fill="#CAFF33"/>
+              <path d="M35 35L45 40V50L35 55L25 50V40L35 35Z" fill="#1A1A1A"/>
             </svg>
           </div>
-          <h2 className="section-title">Thank you for your Interest in LogozoDev.</h2>
+          <h2 className="section-title">Thank you for your Interest in SquareUp.</h2>
           <p className="section-description">
             We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us.
           </p>
-          <button className="btn btn-primary">Start Project</button>
+          <button
+            className="btn btn-primary"
+            onClick={() => {
+              const el = document.getElementById('contact-form');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            Start Project
+          </button>
         </div>
 
         <div className="contact-form-wrapper">
-          <form onSubmit={handleSubmit} className="contact-form-modern">
+          <form id="contact-form" onSubmit={handleSubmit} className="contact-form-modern">
             <div className="form-row">
               <div className="form-group">
                 <label>Full Name</label>

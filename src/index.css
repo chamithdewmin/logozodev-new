@@ -1,6 +1,6 @@
 /* Root Variables */
 :root {
-    --primary-color: #CAFF33;
+    --primary-color: #27ff4b;
     --secondary-color: #CAFF33;
     --dark-bg: #1A1A1A;
     --card-bg: #262626;
@@ -11,7 +11,7 @@
     --bg-darker: #0D0D0D;
     --text-primary: #FFFFFF;
     --text-secondary: #B3B3B3;
-    --accent-color: #CAFF33;
+    --accent-color: #27ff4b;
     --gradient-1: linear-gradient(135deg, #CAFF33 0%, #9FCC26 100%);
     --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.4);

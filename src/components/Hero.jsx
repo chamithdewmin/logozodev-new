@@ -1,7 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Hero.css';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  // Split headline into words for blur animation
+  const line1 = ['A', 'Digital', 'Product', 'Studio'];
+  const line2 = ['that', 'will'];
+  const highlightWord = 'Work';
 
   return (
     <section id="home" className="hero">
@@ -12,8 +19,35 @@ const Hero = () => {
       <div className="container">
         <div className="hero-content">
           <h1 className="hero-title">
-            A Digital Product Studio<br />
-            that will <span className="highlight">Work</span>
+            <span className="blur-text-line">
+              {line1.map((word, index) => (
+                <span
+                  key={index}
+                  className="blur-text-word"
+                  style={{ animationDelay: `${index * 0.15}s` }}
+                >
+                  {word}
+                </span>
+              ))}
+            </span>
+            <br />
+            <span className="blur-text-line">
+              {line2.map((word, index) => (
+                <span
+                  key={index}
+                  className="blur-text-word"
+                  style={{ animationDelay: `${(line1.length + index) * 0.15}s` }}
+                >
+                  {word}
+                </span>
+              ))}
+              <span
+                className="blur-text-word highlight"
+                style={{ animationDelay: `${(line1.length + line2.length) * 0.15}s` }}
+              >
+                {highlightWord}
+              </span>
+            </span>
           </h1>
           <div className="chipbar">
             <span className="chip-label">For</span>
@@ -24,8 +58,8 @@ const Hero = () => {
             <span className="chip">Social Good</span>
           </div>
           <div className="hero-buttons">
-            <button className="btn btn-secondary">Our Works</button>
-            <button className="btn btn-primary">Contact Us</button>
+            <button className="btn btn-secondary" onClick={() => navigate('/work')}>Our Works</button>
+            <button className="btn btn-primary" onClick={() => navigate('/contact#contact-form')}>Contact Us</button>
           </div>
         </div>
       </div>

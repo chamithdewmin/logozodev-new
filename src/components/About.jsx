@@ -32,7 +32,7 @@ const About = () => {
       </div>
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Why Choose SquareUp?</h2>
+          <h2 className="section-title">Why Choose LogozoDev?</h2>
           <p className="section-description">
             Experience excellence in digital craftsmanship with our team of skilled professionals dedicated to delivering exceptional results.
           </p>

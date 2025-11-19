@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import TrustedCompanies from './components/TrustedCompanies';
-import Services from './components/Services';
-import About from './components/About';
-import Testimonials from './components/Testimonials.jsx';
-import FAQ from './components/FAQ';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import ServicesPage from './pages/ServicesPage';
+import WorkPage from './pages/WorkPage';
+import ProcessPage from './pages/ProcessPage';
+import AboutPage from './pages/AboutPage';
+import CareersPage from './pages/CareersPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   useEffect(() => {
@@ -22,17 +23,19 @@ function App() {
   }, []);
 
   return (
-    <>
+    <Router>
       <Navbar />
-      <Hero />
-      <TrustedCompanies />
-      <Services />
-      <About />
-      <Testimonials />
-      <FAQ />
-      <Contact />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/work" element={<WorkPage />} />
+        <Route path="/process" element={<ProcessPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/careers" element={<CareersPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
       <Footer />
-    </>
+    </Router>
   );
 }
 

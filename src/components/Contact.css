@@ -41,13 +41,13 @@
   margin: 0 auto 90px;
 }
 
-.logo-large {
+.logo-icon {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
-.logo-large svg {
+.logo-icon svg {
   animation: float 3s ease-in-out infinite;
 }
 
@@ -64,30 +64,55 @@
   font-size: 2.75rem;
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   line-height: 1.2;
 }
 
 .contact-header .section-description {
   font-size: 1rem;
   color: var(--text-secondary);
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   line-height: 1.8;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-header .btn {
+  margin-bottom: 60px;
 }
 
 .contact-form-wrapper {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
-  background: var(--bg-card);
-  padding: 70px;
-  border-radius: 12px;
-  border: 1px solid rgba(202, 255, 51, 0.1);
+  background: linear-gradient(135deg, #1F1F1F 0%, #141414 100%);
+  padding: 60px 50px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, rgba(202, 255, 51, 0.5), transparent);
 }
 
 .contact-form-modern {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 32px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .form-row {
@@ -273,13 +298,23 @@
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .contact {
     padding: 80px 0;
   }
 
+  .contact-form-wrapper {
+    padding: 50px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 60px 0;
+  }
+
   .contact-header {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 
   .contact-header .section-title {
@@ -295,17 +330,71 @@
     gap: 20px;
   }
 
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.95rem;
+    padding: 14px 16px;
+  }
+
   .checkbox-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .btn-full {
+    padding: 18px;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .contact-form-wrapper {
-    padding: 30px 20px;
+  .contact {
+    padding: 50px 0;
   }
 
   .contact-header .section-title {
     font-size: 1.75rem;
+  }
+
+  .contact-header .section-description {
+    font-size: 15px;
+  }
+
+  .contact-form-wrapper {
+    padding: 30px 20px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.9rem;
+    padding: 12px 14px;
+  }
+
+  .checkbox-label {
+    font-size: 0.85rem;
+    padding-left: 30px;
+  }
+
+  .checkmark {
+    height: 20px;
+    width: 20px;
+  }
+
+  .btn-full {
+    padding: 16px;
+    font-size: 0.95rem;
   }
 }

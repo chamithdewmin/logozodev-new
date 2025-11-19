@@ -87,6 +87,40 @@
     color: var(--text-primary);
 }
 
+/* BlurText Animation */
+.blur-text-line {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.3em;
+    justify-content: center;
+}
+
+.blur-text-word {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(-30px);
+    animation: blurTextReveal 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes blurTextReveal {
+    0% {
+        opacity: 0;
+        filter: blur(12px);
+        transform: translateY(-30px);
+    }
+    60% {
+        opacity: 0.8;
+        filter: blur(4px);
+        transform: translateY(-8px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0px);
+        transform: translateY(0);
+    }
+}
+
 /* chip bar */
 .chipbar {
     display: flex;
@@ -147,12 +181,91 @@
 
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
+    .hero {
+        padding: 100px 0 60px;
+    }
+
     .hero-title {
-        font-size: 32px;
+        font-size: 50px;
     }
 
     .hero-subtitle {
-        font-size: 16px;
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 80px 0 50px;
+    }
+
+    .hero-title {
+        font-size: 40px;
+        margin-bottom: 16px;
+    }
+
+    .hero-subtitle {
+        font-size: 17px;
+        margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .chipbar {
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 28px;
+    }
+
+    .chip {
+        font-size: 11px;
+        padding: 6px 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 70px 0 40px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+        margin-bottom: 24px;
+    }
+
+    .chipbar {
+        gap: 6px;
+        margin-bottom: 24px;
+    }
+
+    .chip {
+        font-size: 10px;
+        padding: 5px 12px;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+    .hero-buttons .btn {
+        padding: 14px 20px;
+        font-size: 14px;
     }
 }
