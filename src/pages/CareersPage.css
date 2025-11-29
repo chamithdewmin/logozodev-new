@@ -220,6 +220,69 @@
   }
 }
 
+@media (max-width: 1200px) and (min-width: 1025px) {
+  .benefits-grid {
+    gap: 32px;
+  }
+  
+  .benefit-card {
+    padding: 40px;
+  }
+  
+  .job-card {
+    padding: 38px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .benefits-section,
+  .careers-section {
+    padding: 80px 0;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .benefit-card {
+    padding: 38px;
+  }
+
+  .job-card {
+    padding: 36px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1440px) {
+  .benefits-section,
+  .careers-section {
+    padding: 120px 0;
+  /* Mobile Responsive CareersPage */
+      height: auto;
+      margin-bottom: 1rem;
+    }
+  }
+  }
+  
+  .benefits-grid {
+    gap: 40px;
+  }
+  
+  .benefit-card {
+    padding: 50px;
+  }
+  
+  .job-card {
+    padding: 45px;
+  }
+  
+  .job-card h3 {
+    font-size: 26px;
+  }
+}
+
 @media (max-width: 768px) {
   .benefits-section,
   .careers-section {
@@ -235,19 +298,89 @@
     padding: 32px;
   }
 
+  .benefit-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .benefit-card h3 {
+    font-size: 20px;
+  }
+
+  .benefit-card p {
+    font-size: 14px;
+  }
+
   .job-card {
     padding: 28px;
   }
 
+  .job-card h3 {
+    font-size: 20px;
+  }
+
   .job-header {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
 
   .apply-btn {
     width: 100%;
+    justify-content: center;
   }
 
   .job-meta {
     gap: 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits-section,
+  .careers-section {
+    padding: 50px 0;
+  }
+
+  .benefits-grid {
+    gap: 20px;
+  }
+
+  .benefit-card {
+    padding: 24px;
+  }
+
+  .benefit-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+
+  .benefit-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .benefit-card p {
+    font-size: 13px;
+  }
+
+  .job-card {
+    padding: 24px;
+  }
+
+  .job-card h3 {
+    font-size: 18px;
+  }
+
+  .job-meta {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .apply-btn {
+    font-size: 14px;
+    padding: 12px 0;
   }
 }

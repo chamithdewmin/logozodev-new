@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import JobApplicationModal from '../components/JobApplicationModal';
 import './JobDetailsPage.css';
 
@@ -26,8 +25,6 @@ const JobDetailsPage = () => {
 
   return (
     <>
-      <Navbar />
-      
       <div className="job-details-container">
         <div className="job-details-hero">
           <div className="container">

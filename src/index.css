@@ -26,12 +26,23 @@
     box-sizing: border-box;
 }
 
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
     width: 100%;
+    max-width: 100vw;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    position: relative;
+    left: 0;
+    right: 0;
 }
 
 body {
@@ -41,61 +52,67 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     width: 100%;
+    max-width: 100vw;
     margin: 0;
     padding: 0;
+    position: relative;
+    left: 0;
+    right: 0;
 }
 
 #root {
     width: 100%;
+    max-width: 100vw;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    position: relative;
+    left: 0;
+    right: 0;
 }
 
 section {
     width: 100%;
     margin: 0;
-    padding-left: 0;
-    padding-right: 0;
+    position: relative;
 }
 
-@media (max-width: 480px) {
-    * {
-        box-sizing: border-box;
-    }
-    
-    html, body {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        overflow-x: hidden !important;
-        position: relative;
-    }
-    
-    body {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-    
-    section {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        box-sizing: border-box;
+/* Ensure React Router and all wrappers are full width */
+[data-reactroot],
+[data-reactroot] > *,
+.router-wrapper,
+.router-wrapper > * {
+    width: 100%;
+    max-width: 100vw;
+}
+
+@media (max-width: 768px) {
+    html, body, #root {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
     }
     
     .container {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+        width: 100%;
+        max-width: 100vw;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    html, body, #root {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 100vw;
+        padding-left: 12px;
+        padding-right: 12px;
     }
 }
 
@@ -103,17 +120,22 @@ section {
     max-width: 1320px;
     margin: 0 auto;
     padding: 0 24px;
+    width: 100%;
+    padding-left: clamp(16px, 4vw, 24px);
+    padding-right: clamp(16px, 4vw, 24px);
 }
 
 @media (max-width: 768px) {
     .container {
-        padding: 0 4px !important;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 !important;
+        padding-left: 12px;
+        padding-right: 12px;
     }
 }
 
@@ -138,19 +160,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title {
-    font-size: 56px;
+    font-size: clamp(32px, 5vw, 56px);
     margin-bottom: 24px;
     line-height: 1.15;
 }
 
 .section-description {
     color: var(--text-secondary);
-    font-size: 18px;
+    font-size: clamp(15px, 2vw, 18px);
     max-width: 600px;
     margin: 0 auto;
 }
 
-/* Buttons */
+/* Buttons - Touch-friendly */
 .btn {
     padding: 14px 32px;
     border: none;
@@ -162,6 +184,9 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    min-height: 44px; /* Touch-friendly minimum */
+    touch-action: manipulation; /* Prevents double-tap zoom */
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
 }
 
 .btn-primary {
@@ -190,26 +215,125 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
+/* Responsive Design - Enhanced Breakpoints */
+/* Large Desktop (1440px+) */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .section-title {
+        font-size: 64px;
+    }
+}
+
+/* Desktop (1024px - 1439px) */
+@media (max-width: 1439px) and (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+/* Tablet Landscape (768px - 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
     .section-title {
         font-size: 46px;
     }
-}
-
-@media (max-width: 768px) {
-    .section-title {
-        font-size: 40px;
+    
+    .section-description {
+        font-size: 17px;
     }
 }
 
+/* Tablet Portrait (481px - 767px) */
+@media (max-width: 767px) and (min-width: 481px) {
+    .section-title {
+        font-size: 40px;
+    }
+    
+    .section-description {
+        font-size: 16px;
+    }
+    
+    .btn {
+        padding: 13px 28px;
+        font-size: 15px;
+    }
+}
+
+/* Mobile (320px - 480px) */
 @media (max-width: 480px) {
     .section-title {
-        font-size: 32px;
+        font-size: clamp(28px, 8vw, 32px);
+    }
+    
+    .section-description {
+        font-size: 15px;
     }
 
     .btn {
         padding: 12px 24px;
         font-size: 14px;
+        min-height: 44px; /* Touch-friendly */
+    }
+    
+    /* Ensure all interactive elements are touch-friendly */
+    button, a, input, select, textarea {
+        min-height: 44px;
     }
 }
+
+/* Extra Small Mobile (max-width: 360px) */
+@media (max-width: 360px) {
+    .section-title {
+        font-size: 26px;
+    }
+    
+    .btn {
+        padding: 11px 20px;
+        font-size: 13px;
+    }
+}
+
+/* Fluid Typography */
+h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Image Responsiveness */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Prevent horizontal overflow */
+* {
+    max-width: 100%;
+}
+
+/* Ensure all containers prevent overflow */
+.container,
+section,
+div[class*="grid"],
+div[class*="container"] {
+    overflow-x: hidden;
+}
+
+/* Smooth scrolling on all devices */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Better text rendering on mobile */
+@media (max-width: 768px) {
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+}
+

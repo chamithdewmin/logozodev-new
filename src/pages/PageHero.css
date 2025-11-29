@@ -236,6 +236,82 @@
   padding-left: 35px;
 }
 
+@media (max-width: 1200px) and (min-width: 1025px) {
+  .page-hero {
+    padding: 170px 0 110px;
+  }
+  
+  .page-hero-title {
+    font-size: 56px;
+  }
+  
+  .service-detail-card {
+    padding: 55px;
+    gap: 45px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .page-hero {
+    padding: 160px 0 100px;
+  }
+
+  .page-hero-title {
+    font-size: 48px;
+  }
+
+  .page-hero-description {
+    font-size: 18px;
+  }
+
+  .service-detail-card {
+    padding: 50px;
+    gap: 40px;
+  }
+
+  .service-detail-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .service-detail-content h2 {
+    font-size: 32px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1440px) {
+  .page-hero {
+    padding: 200px 0 140px;
+  }
+  
+  .page-hero-title {
+    font-size: 72px;
+  }
+  
+  .page-hero-description {
+    font-size: 22px;
+  }
+  
+  .services-detail {
+    padding: 120px 0;
+  }
+  
+  .service-detail-card {
+    padding: 70px;
+    gap: 60px;
+  }
+  
+  .service-detail-icon {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .service-detail-content h2 {
+    font-size: 40px;
+  }
+}
+
 @media (max-width: 768px) {
   .page-hero {
     padding: 140px 0 80px;
@@ -243,6 +319,7 @@
 
   .page-hero-title {
     font-size: 36px;
+    margin-bottom: 20px;
   }
 
   .page-hero-description {
@@ -259,7 +336,77 @@
     gap: 24px;
   }
 
+  .service-detail-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .service-detail-content h2 {
+    font-size: 28px;
+    margin-bottom: 14px;
+  }
+
+  .service-detail-content p {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
   .service-features {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .service-features li {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding: 120px 0 60px;
+  }
+
+  .page-hero-title {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .page-hero-description {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .services-detail {
+    padding: 50px 0;
+  }
+
+  .service-detail-card {
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .service-detail-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .service-detail-content h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .service-detail-content p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .service-features {
+    gap: 10px;
+  }
+
+  .service-features li {
+    padding: 12px 14px;
+    font-size: 13px;
   }
 }

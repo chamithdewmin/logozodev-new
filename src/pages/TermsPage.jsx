@@ -1,6 +1,6 @@
 import React from 'react';
 import './PageHero.css';
-import './TermsPage.css';
+import './LegalPage.css';
 
 const TermsPage = () => {
   return (
@@ -14,10 +14,10 @@ const TermsPage = () => {
         </div>
       </section>
 
-      <section className="terms-content">
+      <section className="legal-content">
         <div className="container">
-          <div className="terms-wrapper">
-            <div className="terms-section">
+          <div className="legal-wrapper">
+            <div className="legal-section">
               <h2>1. Acceptance of Terms</h2>
               <p>
                 By accessing and using LogozoDev's services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
@@ -79,7 +79,7 @@ const TermsPage = () => {
               </p>
             </div>
 
-            <div className="terms-updated">
+            <div className="legal-updated">
               <p><strong>Last Updated:</strong> January 2025</p>
             </div>
           </div>

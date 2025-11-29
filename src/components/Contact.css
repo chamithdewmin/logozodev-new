@@ -684,6 +684,16 @@
   font-weight: 600;
 }
 
+@media (max-width: 1200px) and (min-width: 1025px) {
+  .contact-form-wrapper {
+    padding: 55px 50px;
+  }
+  
+  .form-row {
+    gap: 30px;
+  }
+}
+
 @media (max-width: 1024px) {
   .contact {
     padding: 80px 0;
@@ -691,6 +701,25 @@
 
   .contact-form-wrapper {
     padding: 50px 40px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1440px) {
+  .contact {
+    padding: 140px 0;
+  }
+  
+  .contact-header {
+    margin-bottom: 100px;
+  }
+  
+  .contact-form-wrapper {
+    padding: 60px 70px;
+  }
+  
+  .form-row {
+    gap: 40px;
   }
 }
 

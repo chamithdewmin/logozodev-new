@@ -94,6 +94,17 @@ white-space: nowrap;
   filter: brightness(0) invert(1); 
   object-fit: contain;
 }
+@media (max-width: 1200px) and (min-width: 1025px) {
+    .logo-loop {
+        gap: 70px;
+    }
+    
+    .company-logo {
+        width: 130px;
+        height: 60px;
+    }
+}
+
 @media (max-width: 1024px) {
     .trusted-companies {
         padding: 60px 0 70px;
@@ -112,6 +123,32 @@ white-space: nowrap;
     .company-logo {
         width: 120px;
         height: 56px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1440px) {
+    .trusted-companies {
+        padding: 80px 0 90px;
+    }
+    
+    .logo-loop {
+        gap: 100px;
+    }
+    
+    .logo-loop-container::before,
+    .logo-loop-container::after {
+        width: 250px;
+    }
+    
+    .company-logo {
+        width: 160px;
+        height: 72px;
+    }
+    
+    .trust-pill {
+        font-size: 16px;
+        padding: 14px 26px;
     }
 }
 

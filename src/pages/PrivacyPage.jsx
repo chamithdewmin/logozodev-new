@@ -1,6 +1,6 @@
 import React from 'react';
 import './PageHero.css';
-import './PrivacyPage.css';
+import './LegalPage.css';
 
 const PrivacyPage = () => {
   return (
@@ -14,10 +14,10 @@ const PrivacyPage = () => {
         </div>
       </section>
 
-      <section className="privacy-content">
+      <section className="legal-content">
         <div className="container">
-          <div className="privacy-wrapper">
-            <div className="privacy-section">
+          <div className="legal-wrapper">
+            <div className="legal-section">
               <h2>1. Information We Collect</h2>
               <p>
                 We collect information that you provide directly to us, including:
@@ -102,7 +102,7 @@ const PrivacyPage = () => {
               </p>
             </div>
 
-            <div className="privacy-updated">
+            <div className="legal-updated">
               <p><strong>Last Updated:</strong> January 2025</p>
             </div>
           </div>

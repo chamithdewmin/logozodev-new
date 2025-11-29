@@ -119,6 +119,16 @@
   transform: translateY(-2px);
 }
 
+@media (max-width: 1200px) and (min-width: 1025px) {
+  .cta-background {
+    height: 420px;
+  }
+  
+  .cta-content {
+    padding: 70px 35px;
+  }
+}
+
 @media (max-width: 1024px) {
   .cta-section {
     padding: 80px 0;
@@ -139,6 +149,29 @@
 
   .cta-description {
     font-size: 16px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1440px) {
+  .cta-section {
+    padding: 120px 0;
+  }
+  
+  .cta-background {
+    height: 500px;
+  }
+  
+  .cta-content {
+    padding: 90px 50px;
+  }
+  
+  .cta-title {
+    font-size: 48px;
+  }
+  
+  .cta-description {
+    font-size: 18px;
   }
 }
 

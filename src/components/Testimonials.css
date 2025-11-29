@@ -120,6 +120,16 @@
     color: var(--primary-color);
 }
 
+@media (max-width: 1200px) and (min-width: 1025px) {
+    .testimonials-grid {
+        gap: 32px;
+    }
+    
+    .testimonial-card {
+        padding: 38px;
+    }
+}
+
 @media (max-width: 1024px) {
     .testimonials {
         padding: 80px 0;
@@ -128,6 +138,21 @@
     .testimonials-grid {
         grid-template-columns: 1fr;
         gap: 28px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1440px) {
+    .testimonials {
+        padding: 120px 0;
+    }
+    
+    .testimonials-grid {
+        gap: 40px;
+    }
+    
+    .testimonial-card {
+        padding: 45px;
     }
 }
 
