@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-import ChatButton from './components/ChatButton';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
 import ServiceDetailPage from './pages/ServiceDetailPage';
@@ -48,7 +47,6 @@ function App() {
       </Routes>
       <Footer />
       <ScrollToTop />
-      <ChatButton />
     </Router>
   );
 }
