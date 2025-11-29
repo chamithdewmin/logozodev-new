@@ -133,6 +133,10 @@
 
 @media (max-width: 768px) {
     .navbar { padding: 12px 0; }
+    
+    .navbar .container {
+        padding: 0 4px !important;
+    }
 
     .brand-img { width: 130px; height: 44px; }
 
@@ -166,6 +170,14 @@
 
 @media (max-width: 480px) {
     .navbar { padding: 10px 0; }
+    
+    .navbar .container {
+        padding: 0 !important;
+    }
+    
+    .nav-surface {
+        margin: 0 8px;
+    }
 
     .brand-img { width: 110px; height: 38px; }
 

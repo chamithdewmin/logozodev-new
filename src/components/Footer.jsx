@@ -1,64 +1,119 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
-  const nav = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'Work', href: '#work' },
-    { name: 'Process', href: '#process' },
-    { name: 'About', href: '#about' },
-    { name: 'Careers', href: '#careers' },
-    { name: 'Contact', href: '#contact' }
+  const products = [
+    { name: 'Web Development', href: '/services/web-development' },
+    { name: 'Mobile App Development', href: '/services/mobile-app-development' },
+    { name: 'UI/UX Design', href: '/services/ui-ux-design' },
+    { name: 'E-commerce Solutions', href: '/services/ecommerce-solutions' },
+    { name: 'All Services', href: '/services' }
+  ];
+
+  const helpSupport = [
+    { name: 'FAQ', href: '/faq' },
+    { name: 'Contact us', href: '/contact' },
+    { name: 'Terms of Use', href: '/terms' },
+    { name: 'Privacy Policy', href: '/privacy' }
+  ];
+
+  const company = [
+    { name: 'About us', href: '/about' },
+    { name: 'Careers', href: '/careers' },
+    { name: 'Work', href: '/work' },
+    { name: 'Process', href: '/process' }
+  ];
+
+  const enterprise = [
+    { name: 'Enterprise Solutions', href: '/services/enterprise-solutions' },
+    { name: 'Custom Solutions', href: '/services/custom-solutions' }
   ];
 
   return (
     <footer className="footer">
       <div className="container">
-        {/* Top row: Logo | Nav | Social */}
-        <div className="footer-top">
-          <div className="brand">
-            <div className="brand-logo">
-              <img className="brand-img" src="https://logozodev.com/invoice-demo3/assets/logozodev.png" alt="LogozoDev logo" />
+        <div className="footer-content">
+          {/* Left Section */}
+          <div className="footer-left">
+            <div className="footer-brand">
+              <div className="brand-logo">
+                <img className="brand-img" src="https://logozodev.com/invoice-demo3/assets/logozodev.png" alt="LogozoDev logo" />
+              </div>
+              <p className="brand-tagline">
+                Empowering businesses through innovative digital solutions and cutting-edge technology.
+              </p>
+            </div>
+
+            <div className="footer-social">
+              <div className="social-icons">
+                <a href="#" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="TikTok"><i className="fab fa-tiktok"></i></a>
+              </div>
+            </div>
+
+            <div className="google-play-button">
+              <a href="#" className="play-button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" />
+              </a>
             </div>
           </div>
 
-          <nav className="footer-navlinks" aria-label="Footer">
-            <ul>
-              {nav.map((item) => (
-                <li key={item.name}><a href={item.href}>{item.name}</a></li>
-              ))}
-            </ul>
-          </nav>
+          {/* Right Section - Links Columns */}
+          <div className="footer-right">
+            <div className="footer-column">
+              <h3 className="footer-column-title">Services</h3>
+              <ul className="footer-links">
+                {products.map((item, index) => (
+                  <li key={index}>
+                    <Link to={item.href}>{item.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div className="social-box">
-            <span className="social-title">Stay Connected</span>
-            <div className="social-icons">
-              <a href="#" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
-              <a href="#" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-              <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
+            <div className="footer-column">
+              <h3 className="footer-column-title">Help & Support</h3>
+              <ul className="footer-links">
+                {helpSupport.map((item, index) => (
+                  <li key={index}>
+                    <Link to={item.href}>{item.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="footer-column">
+              <h3 className="footer-column-title">Company</h3>
+              <ul className="footer-links">
+                {company.map((item, index) => (
+                  <li key={index}>
+                    <Link to={item.href}>{item.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="footer-column">
+              <h3 className="footer-column-title">Enterprise</h3>
+              <ul className="footer-links">
+                {enterprise.map((item, index) => (
+                  <li key={index}>
+                    <Link to={item.href}>{item.name}</Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
 
-        {/* Middle contact row */}
-        <div className="footer-contact-row">
-          <a className="contact-chip" href="mailto:hello@logozodev.com">
-            <i className="fas fa-envelope"></i>
-            <span>hello@logozodev.com</span>
-          </a>
-          <a className="contact-chip" href="tel:+919181323309">
-            <i className="fas fa-phone"></i>
-            <span>+91 91813 23 2309</span>
-          </a>
-          <div className="contact-chip">
-            <i className="fas fa-map-marker-alt"></i>
-            <span>Somewhere in the World</span>
-          </div>
+        {/* Bottom Copyright */}
+        <div className="footer-bottom">
+          <p className="footer-copy">© 2025 LogozoDev | Powered by LogozoDev</p>
         </div>
-
-        {/* Bottom copyright row */}
-        <div className="footer-copy">© 2023 LogozoDev. All rights reserved.</div>
       </div>
     </footer>
   );

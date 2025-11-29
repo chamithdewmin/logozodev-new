@@ -1,9 +1,6 @@
 .page-hero {
   padding: 180px 0 120px;
-  /* Add background image with dark overlay; only used on non-Home pages */
-  background:
-    linear-gradient(180deg, rgba(10, 10, 15, 0.85) 0%, rgba(26, 26, 26, 0.92) 100%),
-    url('../assets/hero-bg.jpg') center/cover no-repeat;
+  background: #0D0D0D;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -85,7 +82,7 @@
 
 .services-detail {
   padding: 100px 0;
-  background: var(--darker-bg);
+  background: #0D0D0D;
   position: relative;
 }
 

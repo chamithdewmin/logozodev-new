@@ -1,6 +1,6 @@
 .contact {
   padding: 140px 0;
-  background: var(--bg-dark);
+  background: #0D0D0D;
   position: relative;
   overflow: hidden;
 }
@@ -244,7 +244,7 @@
 }
 
 .form-group select option {
-  background-color: #000000;
+  background-color: #0D0D0D;
   color: #ffffff;
   padding: 12px;
 }
@@ -523,7 +523,7 @@
 .form-group textarea {
   width: 100%;
   padding: 18px 22px;
-  background: var(--bg-dark);
+  background: #0D0D0D;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   color: var(--text-primary);
@@ -581,7 +581,7 @@
   transform: translateY(-50%);
   height: 22px;
   width: 22px;
-  background-color: var(--bg-dark);
+  background-color: #0D0D0D;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 4px;
   transition: all 0.3s ease;
@@ -629,7 +629,7 @@
   width: 100%;
   height: 8px;
   border-radius: 4px;
-  background: var(--bg-dark);
+  background: #0D0D0D;
   outline: none;
   opacity: 1;
   transition: opacity 0.2s;

@@ -16,7 +16,7 @@
     --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
-    --transition: all 0.3s ease;
+    --transition: all 0.3s ease; 
 }
 
 /* Reset */
@@ -28,20 +28,93 @@
 
 html {
     scroll-behavior: smooth;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--dark-bg);
+    background-color: #0D0D0D;
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+section {
+    width: 100%;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (max-width: 480px) {
+    * {
+        box-sizing: border-box;
+    }
+    
+    html, body {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+        position: relative;
+    }
+    
+    body {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    section {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box;
+    }
+    
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
 }
 
 .container {
     max-width: 1320px;
     margin: 0 auto;
     padding: 0 24px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 4px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 !important;
+    }
 }
 
 /* Typography */
