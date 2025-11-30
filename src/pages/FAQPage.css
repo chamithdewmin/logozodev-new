@@ -1,26 +1,23 @@
 .faq-page-content {
   padding: 0;
-  background: #0D0D0D;
+  background: #0b0d0f;
   position: relative;
+  min-height: 100vh;
 }
 
 .faq-page-content .faq {
-  padding: 80px 0;
-}
-
-.faq-page-content .section-header {
-  display: none;
+  padding: 140px 0 100px;
 }
 
 @media (max-width: 768px) {
   .faq-page-content .faq {
-    padding: 60px 0;
+    padding: 100px 0 60px;
   }
 }
 
 @media (max-width: 480px) {
   .faq-page-content .faq {
-    padding: 50px 0;
+    padding: 80px 0 50px;
   }
 }
 

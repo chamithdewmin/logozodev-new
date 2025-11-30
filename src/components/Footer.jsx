@@ -49,16 +49,14 @@ const Footer = () => {
               <div className="social-icons">
                 <a href="#" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
                 <a href="#" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
-                <a href="#" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
+                <a href="#" aria-label="X (Twitter)">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </a>
                 <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
                 <a href="#" aria-label="TikTok"><i className="fab fa-tiktok"></i></a>
               </div>
-            </div>
-
-            <div className="google-play-button">
-              <a href="#" className="play-button">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" />
-              </a>
             </div>
           </div>
 

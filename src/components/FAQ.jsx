@@ -46,11 +46,9 @@ const FAQ = () => {
   return (
     <section id="faq" className="faq">
       <div className="container">
+        <div className="faq-badge">FAQ</div>
         <div className="section-header">
           <h2 className="section-title">Frequently Asked Questions</h2>
-          <p className="section-description">
-            Still you have any questions? Contact our Team via hello@logozodev.com
-          </p>
         </div>
         <div className="faq-list">
           {faqs.map((faq, index) => (
@@ -60,10 +58,11 @@ const FAQ = () => {
               onClick={() => toggleFAQ(index)}
             >
               <div className="faq-question">
-                <div className="faq-number">{String(index + 1).padStart(2, '0')}</div>
                 <h3>{faq.question}</h3>
                 <div className="faq-icon">
-                  {openIndex === index ? '✕' : '+'}
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </div>
               </div>
               {openIndex === index && (

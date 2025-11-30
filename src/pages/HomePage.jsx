@@ -3,8 +3,7 @@ import Hero from '../components/Hero';
 import TrustedCompanies from '../components/TrustedCompanies';
 import Services from '../components/Services';
 import About from '../components/About';
-import Testimonials from '../components/Testimonials';
-import FAQ from '../components/FAQ';
+import GoogleReviews from '../components/GoogleReviews';
 import CTA from '../components/CTA';
 
 const HomePage = () => {
@@ -14,8 +13,7 @@ const HomePage = () => {
       <TrustedCompanies />
       <Services />
       <About />
-      <Testimonials />
-      <FAQ />
+      <GoogleReviews />
       <CTA />
     </>
   );

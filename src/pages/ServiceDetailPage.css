@@ -54,7 +54,7 @@
 .service-benefits h2,
 .service-process h2 {
   font-size: 42px;
-  font-weight: 700;
+  font-weight: 500;
   color: #FFFFFF;
   margin-bottom: 40px;
   text-align: left;
@@ -288,7 +288,7 @@
 
 .process-content h3 {
   font-size: 26px;
-  font-weight: 700;
+  font-weight: 500;
   color: #FFFFFF;
   margin-bottom: 16px;
   letter-spacing: -0.3px;
@@ -325,7 +325,7 @@
 
 .service-cta-section h2 {
   font-size: 38px;
-  font-weight: 700;
+  font-weight: 500;
   color: #FFFFFF;
   margin-bottom: 20px;
   letter-spacing: -0.5px;

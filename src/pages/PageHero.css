@@ -61,7 +61,7 @@
 
 .page-hero-title {
   font-size: 64px;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 28px;
   background: linear-gradient(135deg, #FFFFFF 0%, #CAFF33 100%);
   -webkit-background-clip: text;
@@ -186,7 +186,7 @@
   font-size: 36px;
   margin-bottom: 18px;
   color: var(--text-primary);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .service-detail-content p {
