@@ -29,6 +29,7 @@
 .team-text-content {
   flex: 1;
   max-width: 800px;
+  text-align: left;
 }
 
 .team-badge {
@@ -47,10 +48,11 @@
 
 .team-text-content .section-title {
   font-size: 2.75rem;
-  font-weight: 700;
-  color: var(--text-primary);
+  font-weight: 500;
+  color: #CAFF33;
   margin-bottom: 24px;
   line-height: 1.2;
+  text-align: left;
 }
 
 .team-description {
@@ -128,7 +130,7 @@
 
 .team-name {
   font-size: 1.125rem;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text-primary);
   margin-bottom: 6px;
 }

@@ -9,6 +9,50 @@
     min-height: 400px;
 }
 
+/* Hide scrollbars in Elfsight widget */
+.google-reviews .elfsight-app-f650fecd-a164-4635-88bd-ff432ec57b31 * {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.google-reviews .elfsight-app-f650fecd-a164-4635-88bd-ff432ec57b31 *::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
+/* Target specific Elfsight widget containers */
+.google-reviews .elfsight-app-f650fecd-a164-4635-88bd-ff432ec57b31,
+.google-reviews .elfsight-app-f650fecd-a164-4635-88bd-ff432ec57b31 > div,
+.google-reviews .elfsight-app-f650fecd-a164-4635-88bd-ff432ec57b31 iframe {
+    overflow: hidden !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+.google-reviews .elfsight-app-f650fecd-a164-4635-88bd-ff432ec57b31 iframe {
+    border: none;
+}
+
+/* Hide scrollbars in any nested containers */
+.google-reviews .elfsight-app-f650fecd-a164-4635-88bd-ff432ec57b31 [class*="scroll"],
+.google-reviews .elfsight-app-f650fecd-a164-4635-88bd-ff432ec57b31 [class*="review"],
+.google-reviews .elfsight-app-f650fecd-a164-4635-88bd-ff432ec57b31 [class*="profile"] {
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+.google-reviews .elfsight-app-f650fecd-a164-4635-88bd-ff432ec57b31 [class*="scroll"]::-webkit-scrollbar,
+.google-reviews .elfsight-app-f650fecd-a164-4635-88bd-ff432ec57b31 [class*="review"]::-webkit-scrollbar,
+.google-reviews .elfsight-app-f650fecd-a164-4635-88bd-ff432ec57b31 [class*="profile"]::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
 .section-header {
     text-align: center;
     margin-bottom: 50px;

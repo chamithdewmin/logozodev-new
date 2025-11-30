@@ -1,6 +1,6 @@
 .services-page {
   padding: 140px 0 100px;
-  background: #0b0d0f;
+  background: #0D0D0D;
   position: relative;
   min-height: 100vh;
 }
@@ -25,13 +25,10 @@
   gap: 0;
   max-width: 1400px;
   margin: 0 auto;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  overflow: hidden;
-  border-radius: 0;
 }
 
 .service-card-new {
-  background: #0b0d0f;
+  background: #0D0D0D;
   padding: clamp(40px, 6vw, 60px) clamp(30px, 4vw, 50px);
   position: relative;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
