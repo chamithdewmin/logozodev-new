@@ -15,11 +15,11 @@ const Hero = () => {
       <div className="hero-content">
         <div className="hero-text">
           <h1 className="hero-title">
-            Click & hold to see the
+            Transform Ideas into
             <br />
-            real magic of
+            Winning
             <br />
-            <span className="highlight-text">hyperspeed!</span>
+            <span className="highlight-text">Digital Experiences.</span>
           </h1>
         </div>
         <div className="hero-buttons">
