@@ -8,14 +8,14 @@ import CTA from '../components/CTA';
 
 const HomePage = () => {
   return (
-    <>
+    <div style={{ position: 'relative', width: '100%' }}>
       <Hero />
       <TrustedCompanies />
       <Services />
       <About />
       <GoogleReviews />
       <CTA />
-    </>
+    </div>
   );
 };
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import './ServicesPage.css';
 import CTA from '../components/CTA';
+import LightRays from '../components/LightRays';
 
 const ServicesPage = () => {
   const services = [
@@ -67,9 +68,23 @@ const ServicesPage = () => {
   ];
 
   return (
-    <>
+    <div style={{ position: 'relative', width: '100%' }}>
+      <div className="light-rays-overlay">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#CAFF33"
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={1.2}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          className="custom-rays"
+        />
+      </div>
       <section className="services-page">
-        <div className="container">
+        <div className="container" style={{ position: 'relative', zIndex: 3 }}>
           <div className="services-page-header">
             <h1 className="services-page-title">
               Prioritize your business needs<br />
@@ -80,13 +95,13 @@ const ServicesPage = () => {
           <div className="services-grid-new">
             {services.map((service, index) => (
               <div key={index} className="service-card-new">
+                <h3 className="service-card-title">{service.title}</h3>
+                <p className="service-card-description">{service.description}</p>
                 <div className="service-card-icon">
                   <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d={service.icon} strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <h3 className="service-card-title">{service.title}</h3>
-                <p className="service-card-description">{service.description}</p>
               </div>
             ))}
           </div>
@@ -94,7 +109,7 @@ const ServicesPage = () => {
       </section>
 
       <CTA />
-    </>
+    </div>
   );
 };
 

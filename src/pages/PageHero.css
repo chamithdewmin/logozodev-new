@@ -1,6 +1,6 @@
 .page-hero {
   padding: 180px 0 120px;
-  background: #0D0D0D;
+  background: #000000;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -82,7 +82,7 @@
 
 .services-detail {
   padding: 100px 0;
-  background: #0D0D0D;
+  background: #000000;
   position: relative;
 }
 

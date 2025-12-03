@@ -1,7 +1,7 @@
 /* About Page Hero Section */
 .about-hero {
   padding: 120px 0;
-  background: #0D0D0D;
+  background: #000000;
   position: relative;
   overflow: hidden;
 }
@@ -70,7 +70,7 @@
 /* Company Story Section */
 .company-story {
   padding: 100px 0;
-  background: #0D0D0D;
+  background: #000000;
 }
 
 .company-story-content {
@@ -96,7 +96,7 @@
 /* Vision and Mission Section */
 .vision-mission {
   padding: 100px 0;
-  background: #0D0D0D;
+  background: #000000;
 }
 
 .vision-mission-grid {
@@ -134,7 +134,7 @@
 /* Board of Directors Section */
 .board-directors {
   padding: 100px 0;
-  background: #0D0D0D;
+  background: #000000;
 }
 
 .board-header {

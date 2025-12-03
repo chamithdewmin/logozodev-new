@@ -1,10 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './PageHero.css';
 import './LegalPage.css';
+import LightRays from '../components/LightRays';
 
 const TermsPage = () => {
+  useEffect(() => {
+    document.body.classList.add('hide-scrollbar');
+    return () => {
+      document.body.classList.remove('hide-scrollbar');
+    };
+  }, []);
+
   return (
-    <>
+    <div className="legal-page-wrapper" style={{ position: 'relative', width: '100%' }}>
+      <div className="light-rays-overlay">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#CAFF33"
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={1.2}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          className="custom-rays"
+        />
+      </div>
       <section className="page-hero">
         <div className="container">
           <h1 className="page-hero-title">Terms of Use</h1>
@@ -24,7 +46,7 @@ const TermsPage = () => {
               </p>
             </div>
 
-            <div className="terms-section">
+            <div className="legal-section">
               <h2>2. Use License</h2>
               <p>
                 Permission is granted to temporarily download one copy of the materials on LogozoDev's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
@@ -37,42 +59,42 @@ const TermsPage = () => {
               </ul>
             </div>
 
-            <div className="terms-section">
+            <div className="legal-section">
               <h2>3. Service Description</h2>
               <p>
                 LogozoDev provides digital solutions including web development, mobile app development, UI/UX design, and related services. We reserve the right to modify, suspend, or discontinue any aspect of our services at any time.
               </p>
             </div>
 
-            <div className="terms-section">
+            <div className="legal-section">
               <h2>4. User Responsibilities</h2>
               <p>
                 You are responsible for maintaining the confidentiality of your account and password. You agree to accept responsibility for all activities that occur under your account or password.
               </p>
             </div>
 
-            <div className="terms-section">
+            <div className="legal-section">
               <h2>5. Intellectual Property</h2>
               <p>
                 All content, features, and functionality of our services are owned by LogozoDev and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.
               </p>
             </div>
 
-            <div className="terms-section">
+            <div className="legal-section">
               <h2>6. Limitation of Liability</h2>
               <p>
                 In no event shall LogozoDev or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on LogozoDev's website.
               </p>
             </div>
 
-            <div className="terms-section">
+            <div className="legal-section">
               <h2>7. Revisions and Errata</h2>
               <p>
                 The materials appearing on LogozoDev's website could include technical, typographical, or photographic errors. LogozoDev does not warrant that any of the materials on its website are accurate, complete, or current.
               </p>
             </div>
 
-            <div className="terms-section">
+            <div className="legal-section">
               <h2>8. Contact Information</h2>
               <p>
                 If you have any questions about these Terms of Use, please contact us at <a href="mailto:hello@logozodev.com">hello@logozodev.com</a>.
@@ -85,7 +107,7 @@ const TermsPage = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

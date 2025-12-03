@@ -1,7 +1,7 @@
 .about {
     padding: 100px 0;
     position: relative;
-    background: #0D0D0D;
+    background: #000000;
 }
 
 .about::before {
@@ -42,7 +42,7 @@
 }
 
 .feature-card {
-    background: #0D0D0D;
+    background: #000000;
     padding: 32px;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);

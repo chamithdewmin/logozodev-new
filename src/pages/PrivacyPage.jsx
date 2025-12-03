@@ -1,10 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './PageHero.css';
 import './LegalPage.css';
+import LightRays from '../components/LightRays';
 
 const PrivacyPage = () => {
+  useEffect(() => {
+    document.body.classList.add('hide-scrollbar');
+    return () => {
+      document.body.classList.remove('hide-scrollbar');
+    };
+  }, []);
+
   return (
-    <>
+    <div className="legal-page-wrapper" style={{ position: 'relative', width: '100%' }}>
+      <div className="light-rays-overlay">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#CAFF33"
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={1.2}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          className="custom-rays"
+        />
+      </div>
       <section className="page-hero">
         <div className="container">
           <h1 className="page-hero-title">Privacy Policy</h1>
@@ -30,7 +52,7 @@ const PrivacyPage = () => {
               </ul>
             </div>
 
-            <div className="privacy-section">
+            <div className="legal-section">
               <h2>2. How We Use Your Information</h2>
               <p>We use the information we collect to:</p>
               <ul>
@@ -42,7 +64,7 @@ const PrivacyPage = () => {
               </ul>
             </div>
 
-            <div className="privacy-section">
+            <div className="legal-section">
               <h2>3. Information Sharing</h2>
               <p>
                 We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:
@@ -55,21 +77,21 @@ const PrivacyPage = () => {
               </ul>
             </div>
 
-            <div className="privacy-section">
+            <div className="legal-section">
               <h2>4. Data Security</h2>
               <p>
                 We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.
               </p>
             </div>
 
-            <div className="privacy-section">
+            <div className="legal-section">
               <h2>5. Cookies and Tracking Technologies</h2>
               <p>
                 We use cookies and similar tracking technologies to track activity on our website and hold certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.
               </p>
             </div>
 
-            <div className="privacy-section">
+            <div className="legal-section">
               <h2>6. Your Rights</h2>
               <p>You have the right to:</p>
               <ul>
@@ -81,21 +103,21 @@ const PrivacyPage = () => {
               </ul>
             </div>
 
-            <div className="privacy-section">
+            <div className="legal-section">
               <h2>7. Children's Privacy</h2>
               <p>
                 Our services are not intended for children under 18 years of age. We do not knowingly collect personal information from children under 18.
               </p>
             </div>
 
-            <div className="privacy-section">
+            <div className="legal-section">
               <h2>8. Changes to This Policy</h2>
               <p>
                 We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.
               </p>
             </div>
 
-            <div className="privacy-section">
+            <div className="legal-section">
               <h2>9. Contact Us</h2>
               <p>
                 If you have any questions about this Privacy Policy, please contact us at <a href="mailto:hello@logozodev.com">hello@logozodev.com</a>.
@@ -108,7 +130,7 @@ const PrivacyPage = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

@@ -4,6 +4,7 @@ import './TeamSlider.css';
 import './AboutPage.css';
 import About from '../components/About';
 import CTA from '../components/CTA';
+import LightRays from '../components/LightRays';
 
 const AboutPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,7 +44,21 @@ const AboutPage = () => {
   ];
 
   return (
-    <>
+    <div style={{ position: 'relative', width: '100%' }}>
+      <div className="light-rays-overlay">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#CAFF33"
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={1.2}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          className="custom-rays"
+        />
+      </div>
       {/* Hero Section */}
       <section className="about-hero">
         <div className="container">
@@ -215,7 +230,7 @@ const AboutPage = () => {
       </section>
 
       <CTA />
-    </>
+    </div>
   );
 };
 
