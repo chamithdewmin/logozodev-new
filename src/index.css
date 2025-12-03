@@ -43,13 +43,29 @@ html {
     position: relative;
     left: 0;
     right: 0;
-    /* Hide scrollbar but keep scrolling */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    /* Custom scrollbar */
+    scrollbar-width: thin;  /* Firefox */
+    scrollbar-color: #2A2A2A #0A0A0A;  /* Firefox: thumb and track */
 }
 
+/* Custom Scrollbar for Webkit browsers (Chrome, Safari, Edge) */
 html::-webkit-scrollbar {
-    display: none;  /* Chrome, Safari, Opera */
+    width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+    background: #0A0A0A;
+    border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #2A2A2A;
+    border-radius: 10px;
+    border: 1px solid #1A1A1A;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: #3A3A3A;
 }
 
 body {
@@ -65,13 +81,29 @@ body {
     position: relative;
     left: 0;
     right: 0;
-    /* Hide scrollbar but keep scrolling */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    /* Custom scrollbar */
+    scrollbar-width: thin;  /* Firefox */
+    scrollbar-color: #2A2A2A #0A0A0A;  /* Firefox: thumb and track */
 }
 
+/* Custom Scrollbar for Webkit browsers (Chrome, Safari, Edge) */
 body::-webkit-scrollbar {
-    display: none;  /* Chrome, Safari, Opera */
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #0A0A0A;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #2A2A2A;
+    border-radius: 10px;
+    border: 1px solid #1A1A1A;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #3A3A3A;
 }
 
 #root {
