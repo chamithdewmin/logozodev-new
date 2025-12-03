@@ -1,0 +1,334 @@
+.stepper-outer-container {
+  display: flex;
+  height: 100%;
+  min-height: 100%;
+  flex: 1 1 0%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+.stepper-circle-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 28rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2rem;
+  background: #1A1A1A;
+  border: 1px solid #262626;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.3),
+    0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.stepper-indicator-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 2rem;
+  flex-shrink: 0;
+}
+
+.stepper-content-default {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: 100%;
+  height: 100%;
+}
+
+/* Allow scrolling for step 5 */
+.stepper-content-default:has(.stepper-step-default:has(.application-summary)) {
+  overflow: visible;
+}
+
+.stepper-step-default {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  color: #FFFFFF;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Only step 5 (Review step) should have scrolling */
+.stepper-step-default:has(.application-summary) {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding-right: 0.5rem;
+  height: 100% !important;
+  max-height: 100% !important;
+}
+
+/* Hide scrollbar by default */
+.stepper-step-default:has(.application-summary)::-webkit-scrollbar {
+  width: 8px;
+}
+
+.stepper-step-default:has(.application-summary)::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.stepper-step-default:has(.application-summary)::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+/* Show scrollbar on hover */
+.stepper-step-default:has(.application-summary):hover::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+.stepper-step-default:has(.application-summary):hover::-webkit-scrollbar-thumb {
+  background: #262626;
+}
+
+.stepper-step-default:has(.application-summary):hover::-webkit-scrollbar-thumb:hover {
+  background: #CAFF33;
+}
+
+/* Firefox scrollbar - hidden by default, visible on hover */
+.stepper-step-default:has(.application-summary) {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.stepper-step-default:has(.application-summary):hover {
+  scrollbar-color: #262626 #1A1A1A;
+}
+
+.stepper-footer-container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+.stepper-footer-nav {
+  margin-top: 2.5rem;
+  display: flex;
+}
+
+.stepper-footer-nav.spread {
+  justify-content: space-between;
+}
+
+.stepper-footer-nav.end {
+  justify-content: flex-end;
+}
+
+.stepper-back-button {
+  transition: all 350ms;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  color: #B3B3B3;
+  background: transparent;
+  border: 2px solid #262626;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.stepper-back-button:hover {
+  color: #FFFFFF;
+  border-color: #262626;
+  background: #262626;
+}
+
+.stepper-back-button.inactive {
+  pointer-events: none;
+  opacity: 0.5;
+  color: #B3B3B3;
+}
+
+.stepper-next-button {
+  transition: all 350ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: #CAFF33;
+  color: #000000;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+}
+
+.stepper-next-button:hover {
+  background-color: #27ff4b;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(202, 255, 51, 0.4);
+}
+
+.stepper-next-button:active {
+  background-color: #27ff4b;
+  transform: translateY(0);
+}
+
+.stepper-indicator {
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+.stepper-indicator-inner {
+  display: flex;
+  height: 2.5rem;
+  width: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.stepper-active-dot {
+  height: 0.875rem;
+  width: 0.875rem;
+  border-radius: 9999px;
+  background-color: #000000;
+}
+
+.stepper-step-number {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.stepper-connector {
+  position: relative;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  height: 0.125rem;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  background-color: #262626;
+}
+
+.stepper-connector-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.stepper-check-icon {
+  height: 1rem;
+  width: 1rem;
+  color: currentColor;
+}
+
+/* Job Application Specific Styles */
+.stepper-step-default h2 {
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.stepper-step-default h3 {
+  color: #FFFFFF;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.stepper-step-default p {
+  color: #B3B3B3;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.stepper-step-default label {
+  display: block;
+  color: #FFFFFF;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.stepper-step-default input,
+.stepper-step-default textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #262626;
+  background: #1A1A1A;
+  color: #FFFFFF;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.stepper-step-default input:focus,
+.stepper-step-default textarea:focus {
+  outline: none;
+  border-color: #CAFF33;
+  box-shadow: 0 0 0 3px rgba(202, 255, 51, 0.1);
+}
+
+.stepper-step-default input.error,
+.stepper-step-default textarea.error {
+  border-color: #ff4444;
+  box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.1);
+}
+
+.stepper-step-default input.error:focus,
+.stepper-step-default textarea.error:focus {
+  border-color: #ff4444;
+  box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.2);
+}
+
+.stepper-step-default input::placeholder,
+.stepper-step-default textarea::placeholder {
+  color: #525252;
+}
+
+.stepper-step-default .required {
+  color: #CAFF33;
+}
+
+.stepper-step-default .optional {
+  color: #B3B3B3;
+  font-weight: 400;
+}
+
+.stepper-step-default .error-message {
+  color: #ff4444;
+  font-size: 0.875rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.stepper-step-default .helper-text {
+  color: #525252;
+  font-size: 0.75rem;
+  margin-top: -0.5rem;
+  display: block;
+}
+
