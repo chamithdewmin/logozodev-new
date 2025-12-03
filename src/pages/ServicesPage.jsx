@@ -1,7 +1,7 @@
 import React from 'react';
 import './ServicesPage.css';
 import CTA from '../components/CTA';
-import LightRays from '../components/LightRays';
+import GlareHover from '../components/GlareHover';
 
 const ServicesPage = () => {
   const services = [
@@ -69,20 +69,6 @@ const ServicesPage = () => {
 
   return (
     <div style={{ position: 'relative', width: '100%' }}>
-      <div className="light-rays-overlay">
-        <LightRays
-          raysOrigin="top-center"
-          raysColor="#CAFF33"
-          raysSpeed={1.5}
-          lightSpread={0.8}
-          rayLength={1.2}
-          followMouse={true}
-          mouseInfluence={0.1}
-          noiseAmount={0.1}
-          distortion={0.05}
-          className="custom-rays"
-        />
-      </div>
       <section className="services-page">
         <div className="container" style={{ position: 'relative', zIndex: 3 }}>
           <div className="services-page-header">
@@ -94,15 +80,31 @@ const ServicesPage = () => {
 
           <div className="services-grid-new">
             {services.map((service, index) => (
-              <div key={index} className="service-card-new">
-                <h3 className="service-card-title">{service.title}</h3>
-                <p className="service-card-description">{service.description}</p>
-                <div className="service-card-icon">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d={service.icon} strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+              <GlareHover
+                key={index}
+                width="100%"
+                height="100%"
+                background="#000000"
+                borderRadius="0px"
+                borderColor="rgba(255, 255, 255, 0.1)"
+                glareColor="#ffffff"
+                glareOpacity={0.3}
+                glareAngle={-30}
+                glareSize={300}
+                transitionDuration={800}
+                playOnce={false}
+                className={`service-card-wrapper-new ${index % 3 === 2 ? 'no-right-border' : ''} ${index >= services.length - 3 ? 'no-bottom-border' : ''}`}
+              >
+                <div className="service-card-new">
+                  <h3 className="service-card-title">{service.title}</h3>
+                  <p className="service-card-description">{service.description}</p>
+                  <div className="service-card-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d={service.icon} strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
                 </div>
-              </div>
+              </GlareHover>
             ))}
           </div>
         </div>

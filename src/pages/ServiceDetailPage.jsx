@@ -2,7 +2,6 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './PageHero.css';
 import './ServiceDetailPage.css';
-import LightRays from '../components/LightRays';
 
 const ServiceDetailPage = () => {
   const { slug } = useParams();
@@ -281,20 +280,6 @@ const ServiceDetailPage = () => {
 
   return (
     <div style={{ position: 'relative', width: '100%' }}>
-      <div className="light-rays-overlay">
-        <LightRays
-          raysOrigin="top-center"
-          raysColor="#CAFF33"
-          raysSpeed={1.5}
-          lightSpread={0.8}
-          rayLength={1.2}
-          followMouse={true}
-          mouseInfluence={0.1}
-          noiseAmount={0.1}
-          distortion={0.05}
-          className="custom-rays"
-        />
-      </div>
       <section className="page-hero">
         <div className="container">
           <Link to="/services" className="back-link">

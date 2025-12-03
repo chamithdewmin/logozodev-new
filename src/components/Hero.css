@@ -99,13 +99,24 @@
     box-shadow: 0 10px 30px rgba(202, 255, 51, 0.4);
 }
 
-.hero-btn.btn-secondary {
+.hero-btn.btn-secondary,
+.learn-more-btn {
+    width: 160px;
+    height: 60px;
     background: transparent;
     border: 2px solid #FFFFFF;
     color: #FFFFFF;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    min-width: auto;
+    font-size: 19px;
 }
 
-.hero-btn.btn-secondary:hover {
+.hero-btn.btn-secondary:hover,
+.learn-more-btn:hover {
     background: #FFFFFF;
     color: #1A1A1A;
     transform: translateY(-2px);
@@ -139,16 +150,22 @@
         justify-content: center;
     }
 
-    .hero-btn {
-        width: 100%;
-        max-width: 280px;
+    .hero-btn,
+    .learn-more-btn {
+        width: 110px;
+        max-width: 110px;
+    }
+    
+    .explore-button {
+        width: 110px;
+        max-width: 110px;
     }
 }
 
 @media (max-width: 480px) {
     .hero-background {
-        right: -2%;
-        width: 104%;
+        right: 0%;
+        width: 120%;
     }
 
     .hero-content {
@@ -156,6 +173,7 @@
         align-items: center;
         text-align: center;
         margin-left: 0;
+        margin-top: -250px;
     }
 
     .hero-title {

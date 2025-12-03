@@ -45,14 +45,22 @@
   justify-content: flex-start;
   z-index: 3;
   min-height: 300px;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
-.service-card-new:nth-child(3n) {
+.service-card-wrapper-new.no-right-border .glare-hover {
   border-right: none;
 }
 
-.service-card-new:nth-last-child(-n+3) {
+.service-card-wrapper-new.no-bottom-border .glare-hover {
   border-bottom: none;
+}
+
+.service-card-wrapper-new .glare-hover {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .service-card-new:hover {

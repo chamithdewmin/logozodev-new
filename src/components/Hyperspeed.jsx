@@ -56,9 +56,9 @@ const Hyperspeed = ({
     if (!container) return;
     
     // Clear container
-    while (container.firstChild) {
-      container.removeChild(container.firstChild);
-    }
+        while (container.firstChild) {
+          container.removeChild(container.firstChild);
+        }
     
     const mountainUniforms = {
       uFreq: { value: new THREE.Vector3(3, 6, 10) },
@@ -1103,12 +1103,12 @@ const Hyperspeed = ({
       }
       return needResize;
     }
+      
+      const options = { ...effectOptions };
+      options.distortion = distortions[options.distortion];
 
-    const options = { ...effectOptions };
-    options.distortion = distortions[options.distortion];
-
-    const myApp = new App(container, options);
-    appRef.current = myApp;
+      const myApp = new App(container, options);
+      appRef.current = myApp;
     myApp.loadAssets().then(() => myApp.init());
 
     return () => {

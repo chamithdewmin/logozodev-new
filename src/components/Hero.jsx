@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Hyperspeed from './Hyperspeed';
 import { hyperspeedPresets } from './hyperspeedPresets';
+import ExploreButton from './ExploreButton';
 import './Hero.css';
 
 const Hero = () => {
@@ -23,14 +24,11 @@ const Hero = () => {
           </h1>
         </div>
         <div className="hero-buttons">
+          <ExploreButton onClick={() => navigate('/contact')}>
+            Explore
+          </ExploreButton>
           <button 
-            className="btn btn-primary hero-btn"
-            onClick={() => navigate('/contact')}
-          >
-            Get Started
-          </button>
-          <button 
-            className="btn btn-secondary hero-btn"
+            className="btn btn-secondary hero-btn learn-more-btn"
             onClick={() => navigate('/about')}
           >
             Learn More
