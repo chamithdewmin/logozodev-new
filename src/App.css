@@ -1,0 +1,31 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.app-content {
+  flex: 1;
+  margin-top: 82px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* For 404 page - make it fit in viewport without scrolling */
+.app-content:has(.not-found-page) {
+  height: calc(100vh - 82px);
+  overflow: hidden;
+}
+
+.app-content:has(.not-found-page) .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+}
+
