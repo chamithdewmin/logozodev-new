@@ -12,11 +12,11 @@
   border: none;
   position: relative;
   cursor: pointer;
-  transition-duration: 0.2s;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
-  padding-left: 8px;
-  transition-duration: 0.5s;
+  padding: 0 8px;
   font-size: 22px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 .explore-button .svgIcon {
@@ -28,7 +28,9 @@
 
 .explore-button:hover {
   background-color: rgb(192, 255, 20);
-  transition-duration: 0.5s;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(161, 255, 20, 0.3), 0 0 20px rgba(161, 255, 20, 0.2);
+  transition-duration: 0.3s;
 }
 
 .explore-button:active {
@@ -41,3 +43,19 @@
   transition-duration: 1.5s;
 }
 
+@media (max-width: 480px) {
+  .explore-button {
+    width: 110px !important;
+    height: 50px !important;
+    font-size: 14px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    min-width: 110px !important;
+    max-width: 110px !important;
+  }
+
+  .explore-button .svgIcon {
+    height: 28px;
+    margin-left: 5px;
+  }
+}

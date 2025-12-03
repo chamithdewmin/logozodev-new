@@ -16,11 +16,20 @@ const Hero = () => {
       <div className="hero-content">
         <div className="hero-text">
           <h1 className="hero-title">
-            Transform Ideas into
-            <br />
-            Winning
-            <br />
-            <span className="highlight-text">Digital Experiences.</span>
+            <span className="desktop-text">
+              Transform Ideas into
+              <br />
+              Winning
+              <br />
+              <span className="highlight-text">Digital Experiences.</span>
+            </span>
+            <span className="mobile-text">
+              Transform ideas
+              <br />
+              into Winning
+              <br />
+              <span className="highlight-text">Digital Experiences.</span>
+            </span>
           </h1>
         </div>
         <div className="hero-buttons">
