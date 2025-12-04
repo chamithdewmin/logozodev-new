@@ -33,7 +33,7 @@ const Hero = () => {
           </h1>
         </div>
         <div className="hero-buttons">
-          <ExploreButton onClick={() => navigate('/contact')}>
+          <ExploreButton onClick={() => navigate('/services')}>
             Explore
           </ExploreButton>
           <button 

@@ -13,7 +13,6 @@ const Footer = () => {
 
   const helpSupport = [
     { name: 'FAQ', href: '/faq' },
-    { name: 'Contact us', href: '/contact' },
     { name: 'Terms of Use', href: '/terms' },
     { name: 'Privacy Policy', href: '/privacy' }
   ];

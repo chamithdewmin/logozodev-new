@@ -122,32 +122,32 @@ const CareersPage = () => {
 
   const benefits = [
     {
-      icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+      icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z',
       title: 'Competitive Salary',
       description: 'Industry-leading compensation packages'
     },
     {
-      icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+      icon: 'M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z',
       title: 'Health Benefits',
       description: 'Comprehensive health, dental, and vision coverage'
     },
     {
-      icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
+      icon: 'M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z',
       title: 'Flexible PTO',
       description: 'Unlimited paid time off policy'
     },
     {
-      icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
+      icon: 'M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z',
       title: 'Remote Work',
       description: 'Work from anywhere in the world'
     },
     {
-      icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253',
+      icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z',
       title: 'Learning Budget',
       description: 'Annual budget for courses and conferences'
     },
     {
-      icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6',
+      icon: 'M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z',
       title: 'Career Growth',
       description: 'Clear paths for advancement and development'
     }
@@ -159,24 +159,18 @@ const CareersPage = () => {
 
   return (
     <div style={{ position: 'relative', width: '100%' }}>
-      <section className="page-hero">
-        <div className="container">
-          <h1 className="page-hero-title">Join Our Team</h1>
-          <p className="page-hero-description">
-            Build your career with a team that values creativity, innovation, and work-life balance.
-          </p>
-        </div>
-      </section>
 
       <section className="benefits-section">
         <div className="container">
-          <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '60px' }}>Ready to Be Part of Digital Innovation?</h2>
+          <div className="section-header">
+            <h2 className="section-title">Ready to Be Part of Digital Innovation?</h2>
+          </div>
           <div className="benefits-grid">
             {benefits.map((benefit, index) => (
               <div key={index} className="benefit-card">
-                <div className="benefit-icon">
-                  <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d={benefit.icon} />
+                <div className="benefit-icon-wrapper">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                    <path d={benefit.icon} fill="#CAFF33"/>
                   </svg>
                 </div>
                 <h3>{benefit.title}</h3>

@@ -5,8 +5,6 @@ const companies = [
   { name: 'Google', logo: 'https://logozodev.com/assets/img/brand/vl-brand-1.1.png' },
   { name: 'Microsoft', logo: 'https://cdn.worldvectorlogo.com/logos/microsoft-5.svg' },
   { name: 'Apple', logo: 'https://cdn.worldvectorlogo.com/logos/apple-11.svg' },
-  { name: 'Amazon', logo: 'https://cdn.worldvectorlogo.com/logos/amazon-icon-1.svg' },
-  { name: 'Meta', logo: 'https://cdn.worldvectorlogo.com/logos/meta-icon.svg' },
   { name: 'Netflix', logo: 'https://logozodev.com/assets/img/brand/vl-brand-1.1.png' },
   { name: 'Adobe', logo: 'https://zenithscs.vercel.app/assets/logo-light-DFpW3abd.svg' },
   { name: 'Salesforce', logo: 'https://cdn.worldvectorlogo.com/logos/salesforce-2.svg' },

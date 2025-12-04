@@ -348,7 +348,7 @@ const ServiceDetailPage = () => {
           <div className="service-cta-section">
             <h2>Ready to Get Started?</h2>
             <p>Let's discuss how we can help transform your business with our expert services.</p>
-            <Link to="/contact" className="cta-button">
+            <Link to="/services" className="cta-button">
               Get in Touch
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7" />

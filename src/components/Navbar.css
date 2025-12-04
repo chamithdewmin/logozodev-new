@@ -91,22 +91,86 @@
     flex-shrink: 0;
 }
 
-.cta-btn {
-    padding: 10px 24px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 6px;
-    color: #FFFFFF;
-    font-weight: 500;
-    font-size: 15px;
+.cta-btn-wrapper {
+    position: relative;
     cursor: pointer;
-    transition: var(--transition);
+}
+
+.cta-btn-container {
+    position: relative;
+    width: 256px;
+    height: 56px;
+    opacity: 0.9;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #000000;
+    z-index: 10;
+}
+
+.cta-btn-shimmer {
+    position: absolute;
+    z-index: 10;
+    transform: translateX(-176px) skewX(-12deg);
+    transition: transform 0.7s ease-in;
+    height: 100%;
+    width: 176px;
+    background: linear-gradient(to right, rgb(107, 114, 128), rgba(255, 255, 255, 0.1));
+    opacity: 0.3;
+}
+
+.cta-btn-wrapper:hover .cta-btn-shimmer {
+    transform: translateX(480px) skewX(-12deg);
+}
+
+.cta-btn-inner {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    z-index: 1;
+    opacity: 0.9;
+    border-radius: 12px;
+    inset: 2px;
+    background: #000000;
+}
+
+.cta-btn-text {
+    font-weight: 600;
+    font-size: 18px;
+    height: 100%;
+    opacity: 0.9;
+    width: 100%;
+    padding: 12px 64px;
+    border-radius: 12px;
+    background: #000000;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
     white-space: nowrap;
 }
 
-.cta-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.3);
+.cta-btn-gradient {
+    position: absolute;
+    transition: all 1s;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to right, rgb(34, 197, 94), rgb(234, 179, 8));
+    filter: blur(30px);
+    bottom: -50px;
+}
+
+.cta-btn-wrapper:hover .cta-btn-gradient {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Navbar Divider */
@@ -311,7 +375,7 @@
         display: flex;
     }
     
-    .cta-btn {
+    .cta-btn-wrapper {
         display: none;
     }
     
@@ -399,8 +463,13 @@
         padding: 12px 20px;
     }
     
-    .cta-btn {
-        padding: 12px 28px;
+    .cta-btn-container {
+        width: 240px;
+        height: 52px;
+    }
+
+    .cta-btn-text {
         font-size: 16px;
+        padding: 10px 56px;
     }
 }

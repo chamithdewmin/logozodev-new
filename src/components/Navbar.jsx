@@ -70,12 +70,17 @@ const Navbar = () => {
             </ul>
 
             <div className="nav-actions">
-              <button
-                className="cta-btn"
-                onClick={() => navigate('/contact')}
-              >
-                Get Yours Now
-              </button>
+              <div className="cta-btn-wrapper" onClick={() => navigate('/services')}>
+                <div className="cta-btn-container">
+                  <div className="cta-btn-shimmer" />
+                  <div className="cta-btn-inner">
+                    <button className="cta-btn-text">
+                      Get Started
+                    </button>
+                  </div>
+                  <div className="cta-btn-gradient" />
+                </div>
+              </div>
 
               {/* Mobile Hamburger */}
               <div
