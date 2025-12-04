@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './WorkPage.css';
 import ProjectModal from '../components/ProjectModal';
-import GlareHover from '../components/GlareHover';
 
 const WorkPage = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -161,19 +160,6 @@ const WorkPage = () => {
     setSelectedProject(null);
   };
 
-  const getTechIcon = (tech) => {
-    const icons = {
-      'Spring Boot': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg',
-      'Java': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
-      'Flutter': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg',
-      'Firebase': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
-      'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-      'Node.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-      'C#': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg',
-      '.NET': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg'
-    };
-    return icons[tech] || null;
-  };
 
   return (
     <div className="work-page">
@@ -187,51 +173,28 @@ const WorkPage = () => {
         <div className="container">
           <div className="projects-grid">
             {projects.map((project) => (
-              <GlareHover
-                key={project.id}
-                width="100%"
-                height="100%"
-                background="#000000"
-                borderRadius="0px"
-                borderColor="rgba(255, 255, 255, 0.1)"
-                glareColor="#ffffff"
-                glareOpacity={0.3}
-                glareAngle={-30}
-                glareSize={300}
-                transitionDuration={800}
-                playOnce={false}
-                className="project-card-wrapper"
-              >
+              <div key={project.id} className="project-card-wrapper">
                 <div className="project-card">
-                  <div className="project-number">{project.number}</div>
+                  <h3 className="project-title">
+                    {project.title}
+                    <span className="title-dot">.</span>
+                  </h3>
                   <div className="project-image-container">
                     <img src={project.image} alt={project.title} className="project-image" />
                   </div>
-                  <div className="project-content">
-                    <h3 className="project-title">{project.title}</h3>
-                    <p className="project-description">{project.description}</p>
-                    <div className="project-technologies">
-                      {project.technologies.map((tech, index) => (
-                        <span key={index} className="tech-badge" title={tech}>
-                          {getTechIcon(tech) && (
-                            <img src={getTechIcon(tech)} alt={tech} className="tech-icon" />
-                          )}
-                        </span>
-                      ))}
-                    </div>
-                    <button 
-                      className="learn-more-btn"
-                      onClick={() => handleLearnMore(project)}
-                    >
-                      Learn More
-                      <svg className="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                      </svg>
-                    </button>
-                  </div>
+                  <p className="project-description">{project.fullDescription}</p>
+                  <button 
+                    className="project-arrow-btn"
+                    onClick={() => handleLearnMore(project)}
+                    aria-label={`Learn more about ${project.title}`}
+                  >
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </button>
                 </div>
-              </GlareHover>
+              </div>
             ))}
           </div>
         </div>

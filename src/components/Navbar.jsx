@@ -70,7 +70,7 @@ const Navbar = () => {
             </ul>
 
             <div className="nav-actions">
-              <div className="cta-btn-wrapper" onClick={() => navigate('/services')}>
+              <div className="cta-btn-wrapper" onClick={() => navigate('/contact')}>
                 <div className="cta-btn-container">
                   <div className="cta-btn-shimmer" />
                   <div className="cta-btn-inner">

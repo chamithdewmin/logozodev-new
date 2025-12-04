@@ -15,6 +15,7 @@ import JobDetailsPage from './pages/JobDetailsPage';
 import FAQPage from './pages/FAQPage';
 import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
+import ContactPage from './pages/ContactPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <Footer />

@@ -1,0 +1,93 @@
+/* New Card Design for Entire Website */
+
+.new-card {
+  max-width: 400px;
+  border: 0;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.new-card-container {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(71deg, #080509, #1a171c, #080509);
+  background-clip: padding-box;
+  border-radius: 45px;
+  padding: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.new-card-yellow-box {
+  position: relative;
+}
+
+.new-card-yellow-box::after {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  content: "";
+  z-index: -1;
+  border-radius: 45px;
+  background: linear-gradient(71deg, #110e0e, #afa220, #110e0e);
+}
+
+.new-card-icon {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-card-icon svg {
+  height: 80px;
+  width: 80px;
+}
+
+.new-card-title {
+  font-weight: 600;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 40px;
+  font-style: normal;
+  font-size: 28px;
+  padding-bottom: 8px;
+  margin: 0;
+}
+
+.new-card-description {
+  font-weight: 600;
+  line-height: 32px;
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 16px;
+  max-width: 470px;
+  margin: 0;
+  flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .new-card-container {
+    padding: 30px;
+    border-radius: 35px;
+  }
+
+  .new-card-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .new-card-description {
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .new-card-icon svg {
+    height: 60px;
+    width: 60px;
+  }
+}
+

@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PageHero.css';
 import './CareersPage.css';
+import '../components/Card.css';
 import CTA from '../components/CTA';
 
 const CareersPage = () => {
@@ -159,7 +160,6 @@ const CareersPage = () => {
 
   return (
     <div style={{ position: 'relative', width: '100%' }}>
-
       <section className="benefits-section">
         <div className="container">
           <div className="section-header">
@@ -167,14 +167,43 @@ const CareersPage = () => {
           </div>
           <div className="benefits-grid">
             {benefits.map((benefit, index) => (
-              <div key={index} className="benefit-card">
-                <div className="benefit-icon-wrapper">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                    <path d={benefit.icon} fill="#CAFF33"/>
-                  </svg>
+              <div key={index} className="card-container benefit-card-wrapper">
+                <div className="card-wrapper">
+                  <div className="card-background">
+                    <div className="card-gradient-overlay" />
+                    <div className="card-blur-circle-1" />
+                    <div className="card-ping-circle-1" />
+                    <div className="card-ping-circle-2" />
+                    <div className="card-shimmer" />
+                  </div>
+                  <div className="card-content benefit-card">
+                    <div className="card-icon-wrapper">
+                      <div className="card-icon-ping" />
+                      <div className="card-icon-pulse" />
+                      <div className="card-icon-inner">
+                        <div className="card-icon-svg-wrapper">
+                          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="card-icon-svg">
+                            <path d={benefit.icon} fill="#CAFF33"/>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="card-title">
+                      <h3 className="card-title-text">{benefit.title}</h3>
+                    </div>
+                    <div className="card-description">
+                      <p>{benefit.description}</p>
+                    </div>
+                    <div className="card-divider" />
+                    <div className="card-dots">
+                      <div className="card-dot" />
+                      <div className="card-dot" />
+                      <div className="card-dot" />
+                    </div>
+                  </div>
+                  <div className="card-corner-1" />
+                  <div className="card-corner-2" />
                 </div>
-                <h3>{benefit.title}</h3>
-                <p>{benefit.description}</p>
               </div>
             ))}
           </div>
