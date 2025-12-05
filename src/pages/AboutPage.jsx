@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import "./AboutPage.css";
+import Features from "../components/Features";
 
 const AboutPage = () => {
   return (
@@ -8,7 +9,7 @@ const AboutPage = () => {
 
         <div className="faq-header">
           <motion.h2
-            className="faq-title"
+            className="about-title"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -26,6 +27,8 @@ const AboutPage = () => {
             where innovation meets creativity. We are dedicated to helping you bring your digital vision to life with cutting-edge technology and design.
           </motion.p>
         </div>
+
+        <Features />
 
       </div>
     </section>
