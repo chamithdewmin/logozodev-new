@@ -1,362 +1,265 @@
-/* About Page Hero Section */
-.about-hero {
-  padding: 120px 0;
+/* About Page Styles */
+.about-page-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 80px;
   background: #000000;
-  position: relative;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
-.about-hero .container {
-  max-width: 100%;
-  padding: 0 20px;
-}
-
-.about-hero-background {
+.about-page-container {
   position: relative;
-  width: 100%;
-  max-width: 100%;
+  z-index: 10;
+  max-width: 1280px;
   margin: 0 auto;
-  height: 80vh;
-  min-height: 600px;
-  border-radius: 24px;
+  padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+  .about-page-container {
+    padding: 0 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-page-container {
+    padding: 0 64px;
+  }
+}
+
+/* Header Section */
+.about-page-header {
+  margin: 0 auto 64px;
+  max-width: 800px;
+  text-align: center;
+}
+
+.about-page-title {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.9), #FFFFFF, rgba(255, 255, 255, 0.9));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 24px 0;
+}
+
+.about-page-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .about-page-subtitle {
+    font-size: 22px;
+  }
+}
+
+/* Mission & Vision Section */
+.about-mission-vision {
+  position: relative;
+  margin: 0 auto 96px;
+  max-width: 1280px;
+}
+
+.mission-vision-grid {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .mission-vision-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+}
+
+.mission-card,
+.vision-card {
+  position: relative;
   overflow: hidden;
-}
-
-.about-hero-bg-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  filter: blur(3px);
   border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  transition: all 0.3s ease;
 }
 
-.about-hero-overlay {
+.mission-card:hover,
+.vision-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.about-border-beam {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  display: flex;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.mission-icon-wrapper,
+.vision-icon-wrapper {
+  display: inline-flex;
+  aspect-ratio: 1;
+  height: 64px;
+  width: 64px;
   align-items: center;
   justify-content: center;
-  border-radius: 24px;
-}
-
-.about-hero-content-new {
-  text-align: center;
-  z-index: 2;
-  padding: 40px 20px;
-}
-
-.about-hero-title-new {
-  font-size: clamp(3rem, 8vw, 6rem);
-  font-weight: 500;
-  color: #CAFF33;
-  margin: 0 0 24px 0;
-  line-height: 1.2;
-  letter-spacing: 1px;
-}
-
-.about-hero-subtitle-new {
-  font-size: clamp(1.25rem, 3vw, 2rem);
-  color: rgba(255, 255, 255, 0.9);
-  margin: 0;
-  line-height: 1.5;
-  font-weight: 300;
-}
-
-/* Company Story Section */
-.company-story {
-  padding: 100px 0;
-  background: #000000;
-}
-
-.company-story-content {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.company-story-title {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 500;
-  color: #FFFFFF;
-  margin-bottom: 32px;
-  text-align: center;
-}
-
-.company-story-text {
-  font-size: clamp(16px, 2vw, 18px);
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.8;
-  margin: 0;
-}
-
-/* Vision and Mission Section */
-.vision-mission {
-  padding: 100px 0;
-  background: #000000;
-}
-
-.vision-mission-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.vision-card,
-.mission-card {
-  background: rgba(20, 20, 20, 0.6);
-  padding: 40px;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(to bottom right, rgba(202, 255, 51, 0.2), rgba(202, 255, 51, 0.05));
+  backdrop-filter: blur(8px);
+  margin-bottom: 24px;
 }
 
-.vision-card h3,
-.mission-card h3 {
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
-  font-weight: 500;
+.mission-icon {
+  height: 32px;
+  width: 32px;
   color: #CAFF33;
-  margin-bottom: 20px;
 }
 
-.vision-card p,
-.mission-card p {
-  font-size: clamp(15px, 2vw, 17px);
+.vision-icon-wrapper {
+  background: linear-gradient(to bottom right, rgba(39, 255, 75, 0.2), rgba(39, 255, 75, 0.05));
+}
+
+.vision-icon {
+  height: 32px;
+  width: 32px;
+  color: #27ff4b;
+}
+
+.mission-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mission-title {
+  background: linear-gradient(to right, rgba(202, 255, 51, 0.9), rgba(202, 255, 51, 0.7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.vision-title {
+  background: linear-gradient(to right, rgba(39, 255, 75, 0.9), rgba(39, 255, 75, 0.7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.mission-text,
+.vision-text {
   color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
   line-height: 1.7;
   margin: 0;
 }
 
-/* Board of Directors Section */
-.board-directors {
-  padding: 100px 0;
-  background: #000000;
+/* Values Section */
+.about-values-section {
+  margin-bottom: 96px;
 }
 
-.board-header {
+.values-header {
+  margin-bottom: 48px;
   text-align: center;
-  margin-bottom: 60px;
 }
 
-.board-title {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 500;
-  color: #FFFFFF;
-  margin-bottom: 16px;
-}
-
-.board-subtitle {
-  font-size: clamp(16px, 2vw, 18px);
-  color: rgba(255, 255, 255, 0.7);
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.board-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-  .board-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-  }
-}
-
-.board-member {
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
-  border: none;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.board-member-image-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto 24px;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.board-member-image {
-  width: 100%;
-  height: 500px;
-  border-radius: 12px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.board-member-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(202, 255, 51, 0.95) 0%, rgba(202, 255, 51, 0.85) 30%, rgba(202, 255, 51, 0.7) 60%, transparent 100%);
-  padding: 40px 32px 32px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  transform: translateY(20px);
-  border-radius: 0 0 12px 12px;
-}
-
-.board-member-image-wrapper:hover .board-member-overlay {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.board-member-image-wrapper:hover .board-member-image {
-  transform: scale(1.05);
-}
-
-.board-overlay-content {
-  text-align: left;
-}
-
-.board-overlay-name {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 600;
-  color: #000000;
-  margin: 0 0 8px 0;
+.values-title {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.9), #FFFFFF, rgba(255, 255, 255, 0.9));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px 0;
   line-height: 1.2;
 }
 
-.board-overlay-role {
-  font-size: clamp(14px, 1.5vw, 16px);
-  font-weight: 500;
-  color: rgba(0, 0, 0, 0.8);
-  margin: 0 0 20px 0;
-  line-height: 1.5;
+.values-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 auto;
+  max-width: 640px;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
-.board-social-icons {
-  display: flex;
-  gap: 12px;
-  align-items: center;
+.values-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
 }
 
-.board-social-icon {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.9);
-  border-radius: 8px;
-  color: #FFFFFF;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.board-social-icon:hover {
-  background: rgba(0, 0, 0, 1);
-  color: #CAFF33;
-  transform: translateY(-2px);
-}
-
-.board-member-name {
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
-  font-weight: 500;
-  color: #FFFFFF;
-  margin-bottom: 8px;
-}
-
-.board-member-role {
-  font-size: clamp(14px, 1.5vw, 16px);
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0;
-  line-height: 1.5;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .about-hero-content {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .about-hero-image {
-    height: 400px;
-  }
-
-  .vision-mission-grid {
-    grid-template-columns: 1fr;
+@media (min-width: 768px) {
+  .values-grid {
+    grid-template-columns: 1fr 1fr;
     gap: 32px;
   }
+}
 
-  .board-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-
-  .board-member-image {
-    height: 450px;
+@media (min-width: 1280px) {
+  .values-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
   }
 }
 
-@media (max-width: 768px) {
-  .about-hero {
-    padding: 120px 0 80px;
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .about-page-section {
+    padding-top: 80px;
+    padding-bottom: 60px;
   }
 
-  .about-hero-image {
-    height: 300px;
+  .about-page-container {
+    padding: 0 20px;
   }
 
-  .company-story,
-  .vision-mission,
-  .board-directors {
-    padding: 60px 0;
+  .about-page-header {
+    margin-bottom: 48px;
   }
 
-  .board-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .about-mission-vision {
+    margin-bottom: 64px;
   }
 
-  .board-member-image {
-    height: 500px;
-  }
-
-  .vision-card,
-  .mission-card {
-    padding: 32px;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-hero {
-    padding: 100px 0 60px;
-  }
-
-  .about-hero-image {
-    height: 250px;
-  }
-
-  .company-story,
-  .vision-mission,
-  .board-directors {
-    padding: 50px 0;
-  }
-
-  .vision-card,
   .mission-card,
-  .board-member {
-    padding: 24px;
+  .vision-card {
+    padding: 32px 24px;
+  }
+
+  .mission-title,
+  .vision-title {
+    font-size: 24px;
+  }
+
+  .mission-text,
+  .vision-text {
+    font-size: 16px;
+  }
+
+  .about-values-section {
+    margin-bottom: 64px;
+  }
+
+  .values-header {
+    margin-bottom: 32px;
   }
 }
 

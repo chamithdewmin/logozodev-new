@@ -1,5 +1,5 @@
-import { TextReveal } from "@/components/ui/text-reveal";
-import { cn } from "@/lib/utils";
+import { TextReveal } from "../ui/text-reveal";
+import { cn } from "../../lib/utils";
 import { Geist } from "next/font/google";
 const geist = Geist({
   subsets: ["latin"],

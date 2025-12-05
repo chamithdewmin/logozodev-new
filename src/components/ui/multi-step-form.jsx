@@ -4,11 +4,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Progress } from "@/components/ui/progress";
+import { cn } from "../../lib/utils";
+import { Button } from "./button";
+import { Input } from "./input";
+import { Label } from "./label";
+import { Progress } from "./progress";
 import { CheckCircle2, ArrowRight, ArrowLeft } from "lucide-react";
 // Define the form schema for each step
 const personalInfoSchema = z.object({
