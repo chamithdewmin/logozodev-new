@@ -162,10 +162,8 @@
 
 .process-step-icon {
   display: flex;
-  height: 80px;
-  width: 80px;
-  min-height: 80px;
-  min-width: 80px;
+  height: 96px;
+  width: 96px;
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
@@ -174,22 +172,16 @@
   color: rgba(255, 255, 255, 0.5);
   flex-shrink: 0;
   transition: all 0.3s ease;
-  overflow: hidden;
-  padding: 20px;
-  box-sizing: border-box;
-  position: relative;
+  overflow: visible; /* FIX */
+  padding: 0;        /* FIX */
 }
 
-.process-step-icon svg,
-.process-step-icon > * {
-  width: 24px !important;
-  height: 24px !important;
-  min-width: 24px !important;
-  min-height: 24px !important;
-  flex-shrink: 0;
-  display: block;
-  overflow: hidden;
+
+.process-step-icon svg {
+  width: 40px !important;
+  height: 40px !important;
 }
+
 
 @media (min-width: 768px) {
   .process-step-icon {
@@ -214,7 +206,7 @@
   background: rgba(202, 255, 51, 0.1);
   color: #CAFF33;
   transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(202, 255, 51, 0.3);
+  box-shadow: 0 0 25px rgba(202, 255, 51, 0.6);
 }
 
 .process-step-content {

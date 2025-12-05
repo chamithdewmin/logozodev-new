@@ -8,6 +8,8 @@ import './ContactPage.css';
 const ContactPage = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -19,10 +21,12 @@ const ContactPage = () => {
     setIsSubmitting(true);
     try {
       // Perform form submission logic here
-      console.log('Form submitted:', { name, email, message });
+      console.log('Form submitted:', { name, email, phone, subject, message });
       await new Promise((resolve) => setTimeout(resolve, 1000));
       setName('');
       setEmail('');
+      setPhone('');
+      setSubject('');
       setMessage('');
       setIsSubmitted(true);
       setTimeout(() => {
@@ -125,11 +129,48 @@ const ContactPage = () => {
                     </motion.div>
                   </div>
 
+                  <div className="form-row">
+                    <motion.div
+                      className="form-group"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.55 }}
+                    >
+                      <label htmlFor="phone" className="form-label">Phone</label>
+                      <input
+                        id="phone"
+                        type="tel"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        placeholder="Enter your phone number"
+                        required
+                        className="form-input"
+                      />
+                    </motion.div>
+                    <motion.div
+                      className="form-group"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.6 }}
+                    >
+                      <label htmlFor="subject" className="form-label">Subject</label>
+                      <input
+                        id="subject"
+                        type="text"
+                        value={subject}
+                        onChange={(e) => setSubject(e.target.value)}
+                        placeholder="Enter subject"
+                        required
+                        className="form-input"
+                      />
+                    </motion.div>
+                  </div>
+
                   <motion.div
                     className="form-group"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 }}
+                    transition={{ delay: 0.65 }}
                   >
                     <label htmlFor="message" className="form-label">Message</label>
                     <textarea

@@ -287,26 +287,26 @@
 
 .globe-card {
   position: relative;
-  margin: 32px auto 32px auto;
-  height: 350px;
-  min-height: 240px;
-  max-width: 450px;
+  margin: 10px auto 32px auto;
+  height: 400px;
+  min-height: 320px;
+  max-width: 515px;
   overflow: hidden;
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: linear-gradient(to bottom, #CAFF33, rgba(202, 255, 51, 0.05));
+  background: linear-gradient(to bottom, #000000, rgba(202, 255, 51, 0.05));
   padding: 24px;
   font-size: 30px;
   letter-spacing: -0.02em;
-  color: #000000;
+  color: #ffffff;
   font-weight: 600;
   line-height: 1.05;
 }
 
 @media (min-width: 768px) {
   .globe-card {
-    height: 450px;
-    min-height: 320px;
+    height: 550px;
+    min-height: 380px;
     padding: 32px;
     font-size: 36px;
   }
@@ -316,6 +316,7 @@
   .globe-card {
     font-size: 48px;
   }
+  
 }
 
 .globe-3d-wrapper {
@@ -414,6 +415,10 @@
     height: 250px;
     font-size: 24px;
     padding: 20px;
+  }
+    .globe-3d-wrapper {
+    max-width: 350px;
+    bottom: -75px;
   }
 }
 
