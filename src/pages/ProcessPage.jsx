@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Rocket, Code, Paintbrush, CheckCircle } from 'lucide-react';
 import './ProcessPage.css';
+import CTA from '../components/CTA';
 
 const ProcessPage = () => {
   const features = [
@@ -60,28 +61,14 @@ const ProcessPage = () => {
 
   return (
     <div className="process-page-wrapper">
+      <div className="process-hero">
+        <div className="container">
+          <h1 className="process-hero-title">Our proven process delivers exceptional results.</h1>
+        </div>
+      </div>
+      
       <div className="process-page-container">
         <div className="process-page-content">
-          <div className="process-header">
-            <div className="process-header-content">
-              <h2 className="process-title">
-                Build Your MVP in Three Steps
-              </h2>
-              <p className="process-subtitle">
-                MVPBlocks helps you create, customize, and deploy your product
-                faster than ever before.
-              </p>
-            </div>
-            <div
-              className="process-header-glow"
-              style={{
-                background:
-                  'linear-gradient(152.92deg, rgba(202, 255, 51, 0.2) 4.54%, rgba(202, 255, 51, 0.26) 34.2%, rgba(202, 255, 51, 0.1) 77.55%)',
-              }}
-            ></div>
-          </div>
-
-          <hr className="process-divider" />
 
           <div className="process-grid">
             <div className="process-steps">
@@ -150,6 +137,8 @@ const ProcessPage = () => {
           </div>
         </div>
       </div>
+      
+      <CTA />
     </div>
   );
 };

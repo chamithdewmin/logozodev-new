@@ -1,0 +1,256 @@
+.work-card-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.work-card {
+  width: 100%;
+  height: 600px;
+  background: #252525;
+  padding: 12px;
+  border: 0;
+  overflow: hidden;
+  border-radius: 20px;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+}
+
+.work-card:focus {
+  outline: 2px solid #CAFF33;
+  outline-offset: 2px;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.work-card-figure {
+  width: 100%;
+  height: 400px;
+  background: #0a121a;
+  padding: 10px;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.work-card.group:hover .work-card-figure {
+  height: 360px;
+}
+
+.work-card-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(123.9deg, #CAFF33 1.52%, rgba(187, 255, 0, 0) 68.91%);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.work-card.group:hover .work-card-gradient-overlay {
+  opacity: 1;
+}
+
+.work-card-image {
+  position: absolute;
+  bottom: -4px;
+  right: 0;
+  height: 320px;
+  width: 80%;
+  border: 4px solid transparent;
+  border-radius: 14px;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.work-card.group:hover .work-card-image {
+  bottom: -20px;
+  border-color: rgba(118, 170, 248, 0.18);
+}
+
+.work-card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.work-card-logo {
+  height: 40px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+
+.work-card-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0;
+  line-height: 1.3;
+  text-transform: capitalize;
+}
+
+.work-card-description {
+  font-size: 20px;
+  line-height: 130%;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  flex: 1;
+}
+
+.work-card-tech-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.work-card-tech-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  padding: 6px;
+  transition: all 0.3s ease;
+}
+
+.work-card-tech-icon:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.tech-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.work-card-arrow-icon {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background: #000000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.work-card.group:hover .work-card-arrow-icon {
+  transform: scale(1.1);
+  background: #1a1a1a;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .work-card {
+    height: 580px;
+  }
+
+  .work-card-figure {
+    height: 380px;
+  }
+
+  .work-card.group:hover .work-card-figure {
+    height: 340px;
+  }
+
+  .work-card-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .work-card {
+    height: 500px;
+  }
+
+  .work-card-figure {
+    height: 320px;
+  }
+
+  .work-card.group:hover .work-card-figure {
+    height: 290px;
+  }
+
+  .work-card-image {
+    height: 250px;
+  }
+
+  .work-card-content {
+    padding: 16px;
+  }
+
+  .work-card-title {
+    font-size: 26px;
+  }
+
+  .work-card-description {
+    font-size: 18px;
+  }
+
+  .work-card-tech-icon {
+    width: 28px;
+    height: 28px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-card {
+    height: 450px;
+  }
+
+  .work-card-figure {
+    height: 280px;
+  }
+
+  .work-card.group:hover .work-card-figure {
+    height: 260px;
+  }
+
+  .work-card-image {
+    height: 220px;
+  }
+
+  .work-card.group:hover .work-card-image {
+    bottom: -15px;
+  }
+
+  .work-card-title {
+    font-size: 22px;
+  }
+
+  .work-card-description {
+    font-size: 16px;
+  }
+
+  .work-card-tech-icon {
+    width: 26px;
+    height: 26px;
+    padding: 4px;
+  }
+}

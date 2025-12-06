@@ -2,8 +2,9 @@ import React from 'react';
 import Hero from '../components/Hero';
 import TrustedCompanies from '../components/TrustedCompanies';
 import Services from '../components/Services';
-import About from '../components/About';
+import Features from '../components/Features';
 import GoogleReviews from '../components/GoogleReviews';
+import Pricing from '../components/Pricing';
 import CTA from '../components/CTA';
 
 const HomePage = () => {
@@ -12,8 +13,9 @@ const HomePage = () => {
       <Hero />
       <TrustedCompanies />
       <Services />
-      <About />
+      <Features />
       <GoogleReviews />
+      <Pricing />
       <CTA />
     </div>
   );

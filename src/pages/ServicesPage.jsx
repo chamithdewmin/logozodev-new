@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import './ServicesPage.css';
 import CTA from '../components/CTA';
+import ServiceFlipCard from '../components/ServiceFlipCard';
 
 const ServicesPage = () => {
   const services = [
@@ -83,41 +84,17 @@ const ServicesPage = () => {
   return (
     <div style={{ position: 'relative', width: '100%' }}>
       <section className="services-page">
-        <div className="services-container">
-          <div className="services-header">
-            <div className="services-header-content">
-              <h3 className="services-title">
-                Let's help build your MVP
-              </h3>
-              <p className="services-subtitle">
-                Prioritize your business needs and choose wisely. We offer comprehensive digital solutions tailored to your unique requirements.
-              </p>
-            </div>
-            <div
-              className="services-header-glow"
-              style={{
-                background:
-                  'linear-gradient(152.92deg, rgba(202, 255, 51, 0.2) 4.54%, rgba(202, 255, 51, 0.26) 34.2%, rgba(202, 255, 51, 0.1) 77.55%)',
-              }}
-            ></div>
+        <div className="services-hero">
+          <div className="container">
+            <h1 className="services-hero-title">Our comprehensive services that drive your business growth and success.</h1>
           </div>
-
-          <hr className="services-divider" />
+        </div>
+        
+        <div className="services-container">
 
           <div className="services-grid">
             {services.map((item, idx) => (
-              <li
-                key={idx}
-                className="service-card"
-              >
-                <div className="service-icon-container">
-                  {item.icon}
-                </div>
-                <h4 className="service-card-title">
-                  {item.title}
-                </h4>
-                <p className="service-card-description">{item.description}</p>
-              </li>
+              <ServiceFlipCard key={idx} service={item} />
             ))}
           </div>
         </div>

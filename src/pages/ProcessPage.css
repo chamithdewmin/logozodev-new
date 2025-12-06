@@ -3,7 +3,95 @@
   width: 100%;
   min-height: 100vh;
   background: #000000;
-  padding: 100px 0 80px;
+  padding: 0 0 80px;
+}
+
+.process-hero {
+  padding: 180px 0 80px;
+  text-align: center;
+  position: relative;
+  background: #000000;
+  overflow-x: hidden;
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.process-hero::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.process-hero .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.process-hero .container::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.process-hero-title {
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.process-hero-title::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.process-hero-title {
+  font-size: 64px;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin: 0;
+  line-height: 1.2;
+}
+
+@media (max-width: 1024px) {
+  .process-hero {
+    padding: 160px 0 60px;
+  }
+
+  .process-hero .container {
+    padding: 0 32px;
+  }
+
+  .process-hero-title {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-hero {
+    padding: 140px 0 50px;
+  }
+
+  .process-hero .container {
+    padding: 0 24px;
+  }
+
+  .process-hero-title {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .process-hero {
+    padding: 120px 0 40px;
+  }
+
+  .process-hero .container {
+    padding: 0 16px;
+  }
+
+  .process-hero-title {
+    font-size: 36px;
+  }
 }
 
 .process-page-container {
@@ -84,7 +172,7 @@
 }
 
 .process-subtitle {
-  margin-top: 12px;
+  margin-top: 18px;
   color: rgba(255, 255, 255, 0.6);
   font-size: 16px;
   line-height: 1.6;
@@ -113,6 +201,7 @@
   flex-direction: column;
   gap: 24px;
   width: 100%;
+  margin-top: 100px;
 }
 
 @media (min-width: 768px) {

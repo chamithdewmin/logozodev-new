@@ -1,5 +1,6 @@
 import React from 'react';
 import './About.css';
+import './Card.css';
 
 const About = () => {
   const features = [
@@ -49,14 +50,43 @@ const About = () => {
         </div>
         <div className="features-grid">
           {features.map((feature, index) => (
-            <div key={index} className="feature-card">
-              <div className="feature-icon-wrapper">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                  <path d={feature.icon} fill="#CAFF33"/>
-                </svg>
+            <div key={index} className="card-container feature-card-wrapper">
+              <div className="card-wrapper">
+                <div className="card-background">
+                  <div className="card-gradient-overlay" />
+                  <div className="card-blur-circle-1" />
+                  <div className="card-ping-circle-1" />
+                  <div className="card-ping-circle-2" />
+                  <div className="card-shimmer" />
+                </div>
+                <div className="card-content feature-card">
+                  <div className="card-icon-wrapper">
+                    <div className="card-icon-ping" />
+                    <div className="card-icon-pulse" />
+                    <div className="card-icon-inner">
+                      <div className="card-icon-svg-wrapper">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="card-icon-svg">
+                          <path d={feature.icon} fill="#CAFF33"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card-title">
+                    <h3 className="card-title-text">{feature.title}</h3>
+                  </div>
+                  <div className="card-description">
+                    <p>{feature.description}</p>
+                  </div>
+                  <div className="card-divider" />
+                  <div className="card-dots">
+                    <div className="card-dot" />
+                    <div className="card-dot" />
+                    <div className="card-dot" />
+                  </div>
+                </div>
+                <div className="card-corner-1" />
+                <div className="card-corner-2" />
               </div>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
             </div>
           ))}
         </div>

@@ -1,11 +1,13 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 import { Check, Loader2 } from 'lucide-react';
 import SparklesCore from '../components/SparklesCore';
 import Earth from '../components/ui/globe';
 import './ContactPage.css';
 
 const ContactPage = () => {
+  const location = useLocation();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -15,6 +17,16 @@ const ContactPage = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const formRef = useRef(null);
   const isInView = useInView(formRef, { once: true, amount: 0.3 });
+
+  // Pre-fill form data from navigation state
+  useEffect(() => {
+    if (location.state?.prefillSubject) {
+      setSubject(location.state.prefillSubject);
+    }
+    if (location.state?.prefillMessage) {
+      setMessage(location.state.prefillMessage);
+    }
+  }, [location.state]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -219,7 +231,8 @@ const ContactPage = () => {
               >
                 <div className="globe-container">
                   <article className="globe-card">
-                    Presenting you with the best UI possible.
+                    Creative <br />
+                   Solution In Every Dimension
                     <div className="globe-3d-wrapper">
                       <Earth
                         scale={1.1}

@@ -1,0 +1,361 @@
+.service-flip-card {
+  position: relative;
+  height: 360px;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  perspective: 2000px;
+}
+
+.service-flip-card-inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+}
+
+.service-flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.service-flip-card-front,
+.service-flip-card-back {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, #1a1a1a, #262626, #1a1a1a);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.7s ease;
+}
+
+.service-flip-card-front {
+  transform: rotateY(0deg);
+}
+
+.service-flip-card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.service-flip-card-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(202, 255, 51, 0.05),
+    transparent,
+    rgba(39, 255, 75, 0.05)
+  );
+  pointer-events: none;
+}
+
+/* Front Card Styles */
+.service-flip-card-icon-top-left {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.service-flip-card-icon-box {
+  height: 48px;
+  width: 48px;
+  border-radius: 12px;
+  background: linear-gradient(to bottom right, #CAFF33, #27ff4b, #CAFF33);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(202, 255, 51, 0.25);
+  transition: all 0.3s ease;
+}
+
+.service-flip-card-icon-content {
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-flip-card-icon-content svg {
+  width: 24px;
+  height: 24px;
+}
+
+.service-flip-card:hover .service-flip-card-icon-box {
+  box-shadow: 0 0 30px rgba(202, 255, 51, 0.4);
+}
+
+.service-flip-card-front-content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.service-flip-card-front-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.service-flip-card-title {
+  font-size: 46px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  margin: 0;
+  line-height: 1.3;
+  transition: all 0.3s ease-out;
+}
+
+.service-flip-card:hover .service-flip-card-title {
+  transform: translateY(-2px);
+}
+
+.service-flip-card-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  line-height: 1.4;
+  transition: all 0.3s ease-out;
+}
+
+.service-flip-card:hover .service-flip-card-subtitle {
+  transform: translateY(-2px);
+}
+
+.service-flip-card-zap-icon {
+  position: relative;
+}
+
+.service-flip-card-zap {
+  height: 20px;
+  width: 20px;
+  color: #CAFF33;
+  transition: all 0.3s ease;
+}
+
+.service-flip-card:hover .service-flip-card-zap {
+  transform: scale(1.1) rotate(12deg);
+}
+
+/* Back Card Styles */
+.service-flip-card-back-content {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.service-flip-card-back-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.service-flip-card-back-icon-box {
+  height: 32px;
+  width: 32px;
+  border-radius: 8px;
+  background: linear-gradient(to bottom right, #CAFF33, #27ff4b, #CAFF33);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-flip-card-back-icon {
+  height: 16px;
+  width: 16px;
+  color: #000000;
+}
+
+.service-flip-card-back-title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  margin: 0;
+  line-height: 1.3;
+  transition: all 0.5s ease-out;
+}
+
+.service-flip-card-back-description {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.5s ease-out;
+}
+
+.service-flip-card-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.service-flip-card-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.5s ease;
+}
+
+.service-flip-card-feature-icon {
+  height: 20px;
+  width: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: rgba(202, 255, 51, 0.1);
+}
+
+.service-flip-card-feature-icon-svg {
+  height: 12px;
+  width: 12px;
+  color: #CAFF33;
+}
+
+.service-flip-card-feature-text {
+  font-weight: 500;
+}
+
+.service-flip-card-footer {
+  position: relative;
+  z-index: 10;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.service-flip-card-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #FFFFFF;
+}
+
+.service-flip-card-button:hover {
+  background: linear-gradient(
+    to right,
+    rgba(202, 255, 51, 0.1),
+    rgba(202, 255, 51, 0.05),
+    transparent
+  );
+  border-color: rgba(202, 255, 51, 0.2);
+  transform: scale(1.02);
+}
+
+.service-flip-card-button-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFFFFF;
+  transition: color 0.3s ease;
+}
+
+.service-flip-card-button:hover .service-flip-card-button-text {
+  color: #CAFF33;
+}
+
+.service-flip-card-button-icon {
+  height: 16px;
+  width: 16px;
+  color: #CAFF33;
+  transition: all 0.3s ease;
+}
+
+.service-flip-card-button:hover .service-flip-card-button-icon {
+  transform: translateX(4px) scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service-flip-card {
+    height: auto;
+    min-height: 340px;
+    max-width: 100%;
+  }
+
+  .service-flip-card-inner {
+    transform: none !important;
+    height: 100%;
+  }
+
+  .service-flip-card-front {
+    display: none !important;
+  }
+
+  .service-flip-card-back {
+    transform: none !important;
+    position: relative !important;
+    padding: 20px;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+  }
+
+  .service-flip-card-title {
+    font-size: 17px;
+  }
+
+  .service-flip-card-subtitle {
+    font-size: 13px;
+  }
+
+  .service-flip-card-back-title {
+    font-size: 17px;
+  }
+
+  .service-flip-card-back-description {
+    font-size: 13px;
+  }
+
+  .service-flip-card-feature {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    transition-delay: 0ms !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-flip-card {
+    height: 320px;
+  }
+
+  .service-flip-card-back {
+    padding: 14px;
+  }
+}
+

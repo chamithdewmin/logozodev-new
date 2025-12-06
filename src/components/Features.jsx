@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  Building2,
-  Lightbulb,
-  ScreenShare,
-  Trophy,
-  User,
-  User2,
+  Zap,
+  ShieldCheck,
+  Lock,
+  Headphones,
+  Monitor,
+  Wifi,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import './Features.css';
@@ -13,26 +13,26 @@ import './Features.css';
 // Define the feature item type
 const leftFeatures = [
   {
-    icon: Building2,
-    title: 'Expert Team',
+    icon: Zap,
+    title: 'Fast Development with top-notch quality',
     description:
-      'Work with top professionals and experienced developers who bring real-world expertise to every project.',
+      'We understand the value of your time and budget, which is why we strive to deliver fast and reliable development services. Our team ensures top-notch quality while meeting your deadlines.',
     position: 'left',
     cornerStyle: 'translate-right',
   },
   {
-    icon: User2,
-    title: 'Collaborative Approach',
+    icon: ShieldCheck,
+    title: 'Trustable and one tap solution',
     description:
-      'Join a team that values collaboration, communication, and working together to achieve exceptional results.',
+      'We ensure reliability and foster connectivity to serve your purpose. Our services are quickly updated with cutting-edge technology and thoroughly tested for optimal performance.',
     position: 'left',
     cornerStyle: 'translate-left',
   },
   {
-    icon: Trophy,
-    title: 'Proven Results',
+    icon: Lock,
+    title: 'Secure Data, ensure privacy',
     description:
-      'Deliver outstanding digital solutions that drive growth, engagement, and success for businesses worldwide.',
+      'We understand the value of your sensitive information, which is why we prioritize data security and privacy. We implement robust security measures to protect your digital assets.',
     position: 'left',
     cornerStyle: 'translate-right',
   },
@@ -40,26 +40,26 @@ const leftFeatures = [
 
 const rightFeatures = [
   {
-    icon: ScreenShare,
-    title: 'Innovative Solutions',
+    icon: Headphones,
+    title: '24/7 Dedicated Support',
     description:
-      'Stay ahead with cutting-edge technology and innovative approaches that set your business apart.',
+      'We understand the value of your business operations, which is why we provide round-the-clock support. Our dedicated team is always available to assist you with any issues or questions.',
     position: 'right',
     cornerStyle: 'translate-left',
   },
   {
-    icon: User,
-    title: 'Client-Focused',
+    icon: Monitor,
+    title: 'One solution, all platforms',
     description:
-      'Improve your digital presence with solutions tailored to your unique needs and business goals.',
+      'We ensure reliability and foster connectivity across all platforms. Our cross-platform solutions are quickly updated with cutting-edge technology and thoroughly tested for seamless integration.',
     position: 'right',
     cornerStyle: 'translate-right',
   },
   {
-    icon: Lightbulb,
-    title: 'Creative Excellence',
+    icon: Wifi,
+    title: 'Keep secure on public networks',
     description:
-      'Transform your ideas into reality with creative designs and strategic thinking that captivate audiences.',
+      'We understand the value of your online security, which is why we implement robust protection measures. Our solutions ensure your data remains secure even on public networks.',
     position: 'right',
     cornerStyle: 'translate-left',
   },
@@ -123,7 +123,7 @@ export default function Features() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              Key Benefits of LogozoDev
+              Why Choose LogozoDev?
             </motion.h2>
             <motion.p
               className="features-center-description"
@@ -132,7 +132,7 @@ export default function Features() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              We are dedicated to helping you bring your digital vision to life with cutting-edge technology and design.
+              
             </motion.p>
           </div>
 

@@ -17,11 +17,8 @@ const Hero = () => {
         <div className="hero-text">
           <h1 className="hero-title">
             <span className="desktop-text">
-              Transform Ideas into
-              <br />
-              Winning
-              <br />
-              <span className="highlight-text">Digital Experiences.</span>
+              Transforming your ideas faster, Advanced 
+              <span className="highlight-text"> Digital Innovation.</span>
             </span>
             <span className="mobile-text">
               Transform ideas

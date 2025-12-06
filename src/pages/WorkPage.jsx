@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './WorkPage.css';
 import ProjectModal from '../components/ProjectModal';
+import WorkCard from '../components/WorkCard';
+import CTA from '../components/CTA';
 
 const WorkPage = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -173,28 +175,11 @@ const WorkPage = () => {
         <div className="container">
           <div className="projects-grid">
             {projects.map((project) => (
-              <div key={project.id} className="project-card-wrapper">
-                <div className="project-card">
-                  <h3 className="project-title">
-                    {project.title}
-                    <span className="title-dot">.</span>
-                  </h3>
-                  <div className="project-image-container">
-                    <img src={project.image} alt={project.title} className="project-image" />
-                  </div>
-                  <p className="project-description">{project.fullDescription}</p>
-                  <button 
-                    className="project-arrow-btn"
-                    onClick={() => handleLearnMore(project)}
-                    aria-label={`Learn more about ${project.title}`}
-                  >
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="7" y1="17" x2="17" y2="7"></line>
-                      <polyline points="7 7 17 7 17 17"></polyline>
-                    </svg>
-                  </button>
-                </div>
-              </div>
+              <WorkCard
+                key={project.id}
+                project={project}
+                onLearnMore={handleLearnMore}
+              />
             ))}
           </div>
         </div>
@@ -206,6 +191,8 @@ const WorkPage = () => {
           onClose={handleCloseModal}
         />
       )}
+      
+      <CTA />
     </div>
   );
 };

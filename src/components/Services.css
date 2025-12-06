@@ -74,6 +74,24 @@
     gap: 36px;
     width: 100%;
     max-width: 100%;
+    align-items: start;
+}
+
+.twitter-card-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.twitter-card-container.highlighted {
+    /* Highlighted card styling handled in TwitterCard.css */
+}
+
+.twitter-card-container .learn-more-btn-green {
+    width: 100%;
+    margin-top: 0;
 }
 
 .service-card-wrapper {

@@ -15,7 +15,7 @@ const CTA = () => {
             </div>
             <button
               className="cta-button"
-              onClick={() => navigate('/services')}
+              onClick={() => navigate('/contact')}
             >
               Get In Touch
               <svg fill="currentColor" viewBox="0 0 24 24" className="cta-icon">

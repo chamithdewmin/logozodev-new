@@ -1,8 +1,93 @@
 .services-page {
-  padding: 140px 0 100px;
+  padding: 0 0 100px;
   background: #000000;
   position: relative;
   min-height: 100vh;
+}
+
+.services-hero {
+  padding: 180px 0 80px;
+  text-align: center;
+  position: relative;
+  background: #000000;
+  overflow-x: hidden;
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.services-hero::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.services-hero .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.services-hero .container::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.services-hero-title {
+  font-size: 64px;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin: 0;
+  line-height: 1.2;
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.services-hero-title::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+@media (max-width: 1024px) {
+  .services-hero {
+    padding: 160px 0 60px;
+  }
+
+  .services-hero .container {
+    padding: 0 32px;
+  }
+
+  .services-hero-title {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-hero {
+    padding: 140px 0 50px;
+  }
+
+  .services-hero .container {
+    padding: 0 24px;
+  }
+
+  .services-hero-title {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-hero {
+    padding: 120px 0 40px;
+  }
+
+  .services-hero .container {
+    padding: 0 16px;
+  }
+
+  .services-hero-title {
+    font-size: 36px;
+  }
 }
 
 .services-container {
@@ -83,6 +168,7 @@
   display: grid;
   gap: 32px;
   grid-template-columns: 1fr;
+  justify-items: center;
 }
 
 @media (min-width: 640px) {
