@@ -11,10 +11,10 @@ const WorkPage = () => {
     {
       id: 1,
       number: '01',
-      title: 'DevX - Hackathon',
+      title: 'OOZOON Digital Marketing',
       description: 'Spring Boot Hackathon',
-      technologies: ['Spring Boot', 'Java'],
-      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800',
+      technologies: ['Html', 'Css'],
+      image: 'https://drive.google.com/file/d/1JWFjLkodZeWY4HxVhNuwSkmm5QDHgkHx/view?usp=drive_link',
       fullDescription: 'A comprehensive hackathon management platform built with Spring Boot. This application provides seamless project submission, judging, and real-time leaderboard updates. Features include user authentication, project categorization, and automated scoring system.',
       youtubeLink: 'https://www.youtube.com/watch?v=sample1',
       websiteLink: 'https://devx-hackathon-sample.com',
