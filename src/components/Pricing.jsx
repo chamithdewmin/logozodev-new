@@ -40,7 +40,7 @@ const Pricing = () => {
             <div className="pricing-price">
               <div className="pricing-price-amount">
                 <span className="pricing-price-value">$79</span>
-                <span className="pricing-price-period">/month</span>
+                <span className="pricing-price-period"></span>
               </div>
               <p className="pricing-price-note">
                 Billed monthly • Cancel anytime
@@ -50,9 +50,6 @@ const Pricing = () => {
             <div className="pricing-buttons">
               <button className="pricing-btn pricing-btn-primary">
                 Start Creating
-              </button>
-              <button className="pricing-btn pricing-btn-secondary">
-                Learn More
               </button>
             </div>
             
@@ -110,7 +107,7 @@ const Pricing = () => {
             <div className="pricing-price">
               <div className="pricing-price-amount">
                 <span className="pricing-price-value pricing-price-value-dark">$199</span>
-                <span className="pricing-price-period pricing-price-period-dark">/month</span>
+                <span className="pricing-price-period pricing-price-period-dark"></span>
               </div>
               <p className="pricing-price-note pricing-price-note-dark">
                 Billed monthly • 2 months free yearly
@@ -120,9 +117,6 @@ const Pricing = () => {
             <div className="pricing-buttons">
               <button className="pricing-btn pricing-btn-white">
                 Scale Your Brand
-              </button>
-              <button className="pricing-btn pricing-btn-outline-white">
-                Book Demo
               </button>
             </div>
             
@@ -192,9 +186,6 @@ const Pricing = () => {
             <div className="pricing-buttons">
               <button className="pricing-btn pricing-btn-black">
                 Get Custom Quote
-              </button>
-              <button className="pricing-btn pricing-btn-secondary">
-                Enterprise Demo
               </button>
             </div>
             

@@ -12,16 +12,16 @@ const WorkPage = () => {
       id: 1,
       number: '01',
       title: 'OOZOON Digital Marketing',
-      description: 'Spring Boot Hackathon',
-      technologies: ['Html', 'Css'],
-      image: 'https://drive.google.com/file/d/1JWFjLkodZeWY4HxVhNuwSkmm5QDHgkHx/view?usp=drive_link',
+      description: 'Build the Oozoom dc brand kit',
+      technologies: ['Html', 'Css','PHP'],
+      image: 'https://new.logozodev.com/image/oozoondc.png',
       fullDescription: 'A comprehensive hackathon management platform built with Spring Boot. This application provides seamless project submission, judging, and real-time leaderboard updates. Features include user authentication, project categorization, and automated scoring system.',
       youtubeLink: 'https://www.youtube.com/watch?v=sample1',
       websiteLink: 'https://devx-hackathon-sample.com',
       githubLink: 'https://github.com/sample/devx-hackathon',
       projectImages: [
-        'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200',
-        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200'
+        'https://new.logozodev.com/image/oozoondc.png',
+        'https://new.logozodev.com/image/oozoondc.png'
       ],
       features: [
         'Real-time leaderboard updates',
