@@ -136,7 +136,7 @@ export default function FAQ() {
                     >
                       {item.title}
                       <PlusIcon
-                        size={18}
+                        size={28}
                         className="faq-plus-icon"
                         aria-hidden="true"
                       />

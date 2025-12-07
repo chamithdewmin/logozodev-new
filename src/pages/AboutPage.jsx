@@ -9,7 +9,7 @@ const AboutPage = () => {
     <div className="about-sparkles-page">
       <div className="about-sparkles-content">
         <div className="about-sparkles-text">
-          <span className="about-sparkles-text-rose">Welcome To</span>
+          <span className="about-sparkles-text-rose">Welcome To LogozoDev.</span>
           <br />
           <span className="brand-name">LogozoDev<span className="dot">.</span></span>
         </div>

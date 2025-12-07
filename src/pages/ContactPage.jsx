@@ -235,7 +235,7 @@ const ContactPage = () => {
                    Solution In Every Dimension
                     <div className="globe-3d-wrapper">
                       <Earth
-                        scale={1.1}
+                        scale={0.95}
                         baseColor={[0.65, 0.898, 0.141]}
                         markerColor={[0.65, 0.898, 0.141]}
                         glowColor={[0.65, 0.898, 0.141]}
