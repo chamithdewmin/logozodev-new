@@ -1,248 +1,214 @@
-import React from 'react';
-import { Palette, Rocket, Building2, CheckCircle, ShieldCheck, Clock, RefreshCw } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
+import { Check, Star } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import confetti from 'canvas-confetti';
+import NumberFlow from '@number-flow/react';
+import { Switch } from './ui/switch';
+import { useMediaQuery } from '../hooks/use-media-query';
 import './Pricing.css';
 
+const plans = [
+  {
+    name: 'STARTER',
+    price: '50',
+    yearlyPrice: '40',
+    period: 'per month',
+    features: [
+      'Up to 10 projects',
+      'Basic analytics',
+      '48-hour support response time',
+      'Limited API access',
+      'Community support',
+    ],
+    description: 'Perfect for individuals and small projects',
+    buttonText: 'Start Free Trial',
+    href: '/contact',
+    isPopular: false,
+  },
+  {
+    name: 'PROFESSIONAL',
+    price: '99',
+    yearlyPrice: '79',
+    period: 'per month',
+    features: [
+      'Unlimited projects',
+      'Advanced analytics',
+      '24-hour support response time',
+      'Full API access',
+      'Priority support',
+      'Team collaboration',
+      'Custom integrations',
+    ],
+    description: 'Ideal for growing teams and businesses',
+    buttonText: 'Get Started',
+    href: '/contact',
+    isPopular: true,
+  },
+  {
+    name: 'ENTERPRISE',
+    price: '299',
+    yearlyPrice: '239',
+    period: 'per month',
+    features: [
+      'Everything in Professional',
+      'Custom solutions',
+      'Dedicated account manager',
+      '1-hour support response time',
+      'SSO Authentication',
+      'Advanced security',
+      'Custom contracts',
+      'SLA agreement',
+    ],
+    description: 'For large organizations with specific needs',
+    buttonText: 'Contact Sales',
+    href: '/contact',
+    isPopular: false,
+  },
+];
+
 const Pricing = () => {
+  const [isMonthly, setIsMonthly] = useState(true);
+  const isDesktop = useMediaQuery('(min-width: 768px)');
+  const switchRef = useRef(null);
+
+  const handleToggle = (checked) => {
+    setIsMonthly(!checked);
+    if (checked && switchRef.current) {
+      const rect = switchRef.current.getBoundingClientRect();
+      const x = rect.left + rect.width / 2;
+      const y = rect.top + rect.height / 2;
+      confetti({
+        particleCount: 50,
+        spread: 60,
+        origin: {
+          x: x / window.innerWidth,
+          y: y / window.innerHeight,
+        },
+        colors: ['#CAFF33', '#27ff4b', '#B8E62E', '#FFFFFF'],
+        ticks: 200,
+        gravity: 1.2,
+        decay: 0.94,
+        startVelocity: 30,
+        shapes: ['circle'],
+      });
+    }
+  };
+
   return (
     <div className="pricing-section">
-      <section className="pricing-container">
+      <div className="pricing-container">
         <div className="pricing-header">
-          <h1 className="pricing-main-title">
-            <span className="pricing-title-line-1">Choose Your</span>
-            <br />
-            <span className="pricing-title-line-2">Creative Journey</span>
-          </h1>
-          <p className="pricing-subtitle">
-            From indie creators to enterprise teams, we&apos;ve crafted the
-            perfect plan for every stage of your design evolution
+          <h2 className="pricing-title">
+            Choose Your plan to growth
+          </h2>
+          <p className="pricing-description">
+            Choose the plan that works for you<br />
+            All plans include access to our platform, lead generation tools, and dedicated support.
           </p>
         </div>
-        
+
         <div className="pricing-grid">
-          <article className="pricing-card pricing-card-creative">
-            <div className="pricing-card-header">
-              <div className="pricing-card-category">
-                <Palette className="pricing-icon" />
-                <span className="pricing-category-text">Creative</span>
-              </div>
-              <span className="pricing-badge pricing-badge-creative">
-                Perfect Start
-              </span>
-            </div>
-            
-            <div className="pricing-card-content">
-              <h2 className="pricing-card-title">Individual Creators</h2>
-              <p className="pricing-card-description">
-                Everything you need to launch your creative projects
-              </p>
-            </div>
-            
-            <div className="pricing-price">
-              <div className="pricing-price-amount">
-                <span className="pricing-price-value">$79</span>
-                <span className="pricing-price-period"></span>
-              </div>
-              <p className="pricing-price-note">
-                Billed monthly • Cancel anytime
-              </p>
-            </div>
-            
-            <div className="pricing-buttons">
-              <button className="pricing-btn pricing-btn-primary">
-                Start Creating
-              </button>
-            </div>
-            
-            <hr className="pricing-divider" />
-            
-            <ul className="pricing-features">
-              <li className="pricing-feature-item">
-                <CheckCircle className="pricing-check-icon" />
-                <span>
-                  <strong>Brand Identity</strong> - Logo, colors, typography
-                </span>
-              </li>
-              <li className="pricing-feature-item">
-                <CheckCircle className="pricing-check-icon" />
-                <span>
-                  <strong>Website</strong> - 5 pages, mobile-optimized
-                </span>
-              </li>
-              <li className="pricing-feature-item">
-                <CheckCircle className="pricing-check-icon" />
-                <span>
-                  <strong>Social Media Kit</strong> - 10 custom templates
-                </span>
-              </li>
-              <li className="pricing-feature-item">
-                <CheckCircle className="pricing-check-icon" />
-                <span>
-                  <strong>Email Support</strong> - Response within 24 hours
-                </span>
-              </li>
-            </ul>
-          </article>
+          {plans.map((plan, index) => (
+            <motion.div
+              key={index}
+              initial={{ y: 50, opacity: 1 }}
+              whileInView={
+                isDesktop
+                  ? {
+                      y: plan.isPopular ? -20 : 0,
+                      opacity: 1,
+                      x: index === 2 ? -30 : index === 0 ? 30 : 0,
+                      scale: index === 0 || index === 2 ? 0.94 : 1.0,
+                    }
+                  : {}
+              }
+              viewport={{ once: true }}
+              transition={{
+                duration: 1.6,
+                type: 'spring',
+                stiffness: 100,
+                damping: 30,
+                delay: 0.4,
+                opacity: { duration: 0.5 },
+              }}
+              className={`pricing-card ${
+                plan.isPopular ? 'pricing-card-popular' : ''
+              } ${
+                index === 0 || index === 2
+                  ? 'pricing-card-side'
+                  : 'pricing-card-center'
+              } ${index === 0 ? 'pricing-card-left' : ''} ${
+                index === 2 ? 'pricing-card-right' : ''
+              }`}
+            >
+              {plan.isPopular && (
+                <div className="pricing-popular-badge">
+                  <Star className="pricing-star-icon" size={16} />
+                  <span className="pricing-popular-text">Popular</span>
+                </div>
+              )}
 
-          <article className="pricing-card pricing-card-popular">
-            <div className="pricing-popular-badge">
-              <div className="pricing-popular-badge-content">
-                Most Popular
-              </div>
-            </div>
-            
-            <div className="pricing-card-header">
-              <div className="pricing-card-category">
-                <Rocket className="pricing-icon" />
-                <span className="pricing-category-text pricing-category-text-dark">Professional</span>
-              </div>
-            </div>
-            
-            <div className="pricing-card-content">
-              <h2 className="pricing-card-title pricing-card-title-dark">Growing Businesses</h2>
-              <p className="pricing-card-description pricing-card-description-dark">
-                Scale your brand with comprehensive design systems
-              </p>
-            </div>
-            
-            <div className="pricing-price">
-              <div className="pricing-price-amount">
-                <span className="pricing-price-value pricing-price-value-dark">$199</span>
-                <span className="pricing-price-period pricing-price-period-dark"></span>
-              </div>
-              <p className="pricing-price-note pricing-price-note-dark">
-                Billed monthly • 2 months free yearly
-              </p>
-            </div>
-            
-            <div className="pricing-buttons">
-              <button className="pricing-btn pricing-btn-white">
-                Scale Your Brand
-              </button>
-            </div>
-            
-            <hr className="pricing-divider pricing-divider-dark" />
-            
-            <ul className="pricing-features">
-              <li className="pricing-feature-item">
-                <CheckCircle className="pricing-check-icon" />
-                <span>
-                  <strong>Brand Strategy</strong> - Market research &amp; positioning
-                </span>
-              </li>
-              <li className="pricing-feature-item">
-                <CheckCircle className="pricing-check-icon" />
-                <span>
-                  <strong>Web Experience</strong> - 15 pages + e-commerce
-                </span>
-              </li>
-              <li className="pricing-feature-item">
-                <CheckCircle className="pricing-check-icon" />
-                <span>
-                  <strong>UI/UX Design</strong> - App or web application
-                </span>
-              </li>
-              <li className="pricing-feature-item">
-                <CheckCircle className="pricing-check-icon" />
-                <span>
-                  <strong>Marketing Materials</strong> - Brochures, presentations
-                </span>
-              </li>
-              <li className="pricing-feature-item">
-                <CheckCircle className="pricing-check-icon" />
-                <span>
-                  <strong>Priority Support</strong> - Slack + video calls
-                </span>
-              </li>
-            </ul>
-          </article>
+              <div className="pricing-card-content">
+                <p className="pricing-plan-name">{plan.name}</p>
 
-          <article className="pricing-card pricing-card-enterprise">
-            <div className="pricing-card-header">
-              <div className="pricing-card-category">
-                <Building2 className="pricing-icon" />
-                <span className="pricing-category-text">Enterprise</span>
+                <div className="pricing-price-wrapper">
+                  <span className="pricing-price-value">
+                    <NumberFlow
+                      value={
+                        isMonthly ? Number(plan.price) : Number(plan.yearlyPrice)
+                      }
+                      format={{
+                        style: 'currency',
+                        currency: 'USD',
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0,
+                      }}
+                      transformTiming={{
+                        duration: 500,
+                        easing: 'ease-out',
+                      }}
+                      willChange
+                      className="pricing-number-flow"
+                    />
+                  </span>
+                  {plan.period !== 'Next 3 months' && (
+                    <span className="pricing-period">/ {plan.period}</span>
+                  )}
+                </div>
+
+                <p className="pricing-billing-note">
+                  {isMonthly ? 'billed monthly' : 'billed annually'}
+                </p>
+
+                <ul className="pricing-features-list">
+                  {plan.features.map((feature, idx) => (
+                    <li key={idx} className="pricing-feature-item">
+                      <Check className="pricing-check-icon" size={16} />
+                      <span className="pricing-feature-text">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <hr className="pricing-divider" />
+
+                <Link
+                  to={plan.href}
+                  className={`pricing-button ${
+                    plan.isPopular ? 'pricing-button-popular' : ''
+                  }`}
+                >
+                  {plan.buttonText}
+                </Link>
+
+                <p className="pricing-plan-description">{plan.description}</p>
               </div>
-              <span className="pricing-badge pricing-badge-enterprise">
-                Custom
-              </span>
-            </div>
-            
-            <div className="pricing-card-content">
-              <h2 className="pricing-card-title">Large Teams</h2>
-              <p className="pricing-card-description">
-                Dedicated design team with unlimited creative capacity
-              </p>
-            </div>
-            
-            <div className="pricing-price">
-              <div className="pricing-price-amount">
-                <span className="pricing-price-value pricing-price-custom">Custom</span>
-              </div>
-              <p className="pricing-price-note">
-                Tailored pricing based on your needs
-              </p>
-            </div>
-            
-            <div className="pricing-buttons">
-              <button className="pricing-btn pricing-btn-black">
-                Get Custom Quote
-              </button>
-            </div>
-            
-            <hr className="pricing-divider" />
-            
-            <ul className="pricing-features">
-              <li className="pricing-feature-item">
-                <CheckCircle className="pricing-check-icon" />
-                <span>
-                  <strong>Dedicated Team</strong> - 3-5 senior designers
-                </span>
-              </li>
-              <li className="pricing-feature-item">
-                <CheckCircle className="pricing-check-icon" />
-                <span>
-                  <strong>Enterprise System</strong> - Multi-brand management
-                </span>
-              </li>
-              <li className="pricing-feature-item">
-                <CheckCircle className="pricing-check-icon" />
-                <span>
-                  <strong>White-label Solutions</strong> - Custom portals
-                </span>
-              </li>
-              <li className="pricing-feature-item">
-                <CheckCircle className="pricing-check-icon" />
-                <span>
-                  <strong>24/7 Support</strong> - Dedicated account manager
-                </span>
-              </li>
-            </ul>
-          </article>
+            </motion.div>
+          ))}
         </div>
-
-        <div className="pricing-footer">
-          <p className="pricing-footer-text">
-            Trusted by 2,500+ creative professionals worldwide
-          </p>
-          <div className="pricing-footer-features">
-            <div className="pricing-footer-feature">
-              <ShieldCheck className="pricing-footer-icon" />
-              <span>SSL Secured</span>
-            </div>
-            <div className="pricing-footer-feature">
-              <Clock className="pricing-footer-icon" />
-              <span>24/7 Support</span>
-            </div>
-            <div className="pricing-footer-feature">
-              <RefreshCw className="pricing-footer-icon" />
-              <span>Cancel Anytime</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
   );
 };
 
 export default Pricing;
-

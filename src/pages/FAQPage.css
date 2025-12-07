@@ -3,6 +3,15 @@
   background: #000000;
   position: relative;
   overflow-x: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.faq-page-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+  width: 0;
+  height: 0;
+  background: transparent;
 }
 
 /* Hide scrollbar on FAQ page when body has faq-page-active class */
